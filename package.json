@@ -7,7 +7,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "test": "jest",
+    "test": "jest --run-in-band",
+    "test:coverage": "jest --coverage --verbose --ci --run-in-band --bail --silent",
+    "test:watch": "jest --watch --run-in-band",
     "format": "prettier . --write",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prepare": "husky install"
