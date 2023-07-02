@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.json",
+  "jest": {
+    "preset": "jest-expo"
+  }
+}
