@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { Text } from "react-native";
 
-import { Wrapper } from "./components";
+import { Wrapper } from "@components";
 
 export default function App() {
   return (
