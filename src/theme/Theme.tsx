@@ -22,6 +22,7 @@ interface ThemeProviderProps {
 const theme = createTheme({
   colors: {
     background: palette.white,
+    text: palette.black,
   },
   spacing: {
     s: spacing.s,
@@ -38,6 +39,13 @@ const theme = createTheme({
   breakpoints: {
     phone: breakpoints.phone,
     tablet: breakpoints.tablet,
+  },
+  textVariants: {
+    title: {
+      fontSize: 32,
+      color: "text",
+      textAlign: "center",
+    },
   },
 });
 

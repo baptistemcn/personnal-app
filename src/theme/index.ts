@@ -1,1 +1,1 @@
-export { Box, ThemeProvider } from "./Theme";
+export { Box, Text, ThemeProvider } from "./Theme";
