@@ -11,6 +11,7 @@ import {
 } from "@shopify/restyle";
 
 import { palette } from "./palette";
+import { spacing } from "./spacing";
 
 interface ThemeProviderProps {
   children: ReactNode;
@@ -20,7 +21,12 @@ const theme = createTheme({
   colors: {
     background: palette.white,
   },
-  spacing: {},
+  spacing: {
+    s: spacing.s,
+    m: spacing.s,
+    l: spacing.s,
+    xl: spacing.s,
+  },
   borderRadii: {},
   breakpoints: {},
 });
