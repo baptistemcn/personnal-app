@@ -8,6 +8,7 @@ module.exports = function (api) {
         {
           alias: {
             "@components": "./src/components",
+            "@theme": "./src/theme",
           },
           extensions: [".ts", ".tsx"],
         },

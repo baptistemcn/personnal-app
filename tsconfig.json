@@ -4,7 +4,8 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@components": ["src/components/index"]
+      "@components": ["src/components/index"],
+      "@theme": ["src/theme/index"]
     }
   }
 }
