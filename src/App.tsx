@@ -1,9 +1,11 @@
-import { Card, Wrapper } from "@components";
+import { Card, ThemeProvider, Wrapper } from "@components";
 
 export default function App() {
   return (
-    <Wrapper>
-      <Card />
-    </Wrapper>
+    <ThemeProvider>
+      <Wrapper>
+        <Card />
+      </Wrapper>
+    </ThemeProvider>
   );
 }

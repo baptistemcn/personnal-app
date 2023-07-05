@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@shopify/restyle':
+    specifier: ^2.4.2
+    version: 2.4.2(react-native@0.71.8)(react@18.2.0)
   expo:
     specifier: ~48.0.18
     version: 48.0.18(@babel/core@7.20.2)
@@ -2544,6 +2547,16 @@ packages:
     dependencies:
       component-type: 1.2.1
       join-component: 1.1.0
+    dev: false
+
+  /@shopify/restyle@2.4.2(react-native@0.71.8)(react@18.2.0):
+    resolution: {integrity: sha512-r01j9bbXkhZZkGkLnE6jsJvSCkcjwXBySfe8bQCB7duEfQn36mU6WumNc2pndzXpZhPSevppyXzFZ2jY3XUakw==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+    dependencies:
+      react: 18.2.0
+      react-native: 0.71.8(@babel/core@7.20.2)(@babel/preset-env@7.22.5)(react@18.2.0)
     dev: false
 
   /@sideway/address@4.1.4:
