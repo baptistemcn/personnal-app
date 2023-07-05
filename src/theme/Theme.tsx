@@ -12,6 +12,7 @@ import {
 
 import { palette } from "./palette";
 import { spacing } from "./spacing";
+import { breakpoints } from "./breakpoints";
 
 interface ThemeProviderProps {
   children: ReactNode;
@@ -28,7 +29,10 @@ const theme = createTheme({
     xl: spacing.s,
   },
   borderRadii: {},
-  breakpoints: {},
+  breakpoints: {
+    phone: breakpoints.phone,
+    tablet: breakpoints.tablet,
+  },
 });
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => (
