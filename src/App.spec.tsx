@@ -9,9 +9,7 @@ describe("App", () => {
   it("should render a text", () => {
     const { getByText } = render(<App />);
 
-    const textElement = getByText(
-      "Open up App.tsx to start working on your app!",
-    );
+    const textElement = getByText("Développeur Front-End");
 
     expect(textElement).toBeTruthy();
   });
