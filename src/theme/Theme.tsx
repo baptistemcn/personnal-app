@@ -10,9 +10,10 @@ import {
   ThemeProvider as ReStyleThemeProvider,
 } from "@shopify/restyle";
 
+import { borderRadius } from "./borderradius";
+import { breakpoints } from "./breakpoints";
 import { palette } from "./palette";
 import { spacing } from "./spacing";
-import { breakpoints } from "./breakpoints";
 
 interface ThemeProviderProps {
   children: ReactNode;
@@ -28,7 +29,12 @@ const theme = createTheme({
     l: spacing.s,
     xl: spacing.s,
   },
-  borderRadii: {},
+  borderRadii: {
+    s: borderRadius.s,
+    m: borderRadius.m,
+    l: borderRadius.l,
+    xl: borderRadius.xl,
+  },
   breakpoints: {
     phone: breakpoints.phone,
     tablet: breakpoints.tablet,
