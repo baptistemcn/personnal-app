@@ -1,5 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { ReactNode } from "react";
+import { ImageStyle, TextStyle, ViewStyle } from "react-native";
+
 import {
   createTheme,
   createText,
@@ -7,14 +9,17 @@ import {
   useTheme as useReTheme,
   ThemeProvider as ReStyleThemeProvider,
 } from "@shopify/restyle";
-import { ImageStyle, TextStyle, ViewStyle } from "react-native";
+
+import { palette } from "./palette";
 
 interface ThemeProviderProps {
   children: ReactNode;
 }
 
 const theme = createTheme({
-  colors: {},
+  colors: {
+    background: palette.white,
+  },
   spacing: {},
   borderRadii: {},
   breakpoints: {},
