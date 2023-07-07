@@ -26,9 +26,9 @@ const theme = createTheme({
   },
   spacing: {
     s: spacing.s,
-    m: spacing.s,
-    l: spacing.s,
-    xl: spacing.s,
+    m: spacing.m,
+    l: spacing.l,
+    xl: spacing.xl,
   },
   borderRadii: {
     s: borderRadius.s,
@@ -41,8 +41,13 @@ const theme = createTheme({
     tablet: breakpoints.tablet,
   },
   textVariants: {
-    title: {
-      fontSize: 32,
+    title1: {
+      fontSize: 28,
+      color: "text",
+      textAlign: "center",
+    },
+    text: {
+      fontSize: 18,
       color: "text",
       textAlign: "center",
     },
