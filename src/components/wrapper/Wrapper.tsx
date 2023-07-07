@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
-import { View } from "react-native";
+
+import { Box } from "@theme";
 
 import { styles } from "./wrapper.styles";
 
@@ -9,8 +10,8 @@ interface WrapperProps {
 
 export const Wrapper = ({ children }: WrapperProps) => {
   return (
-    <View style={styles.container} testID="wrapper">
+    <Box style={styles.container} testID="wrapper">
       {children}
-    </View>
+    </Box>
   );
 };
