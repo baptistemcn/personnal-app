@@ -24,12 +24,22 @@ describe("Card Component", () => {
     render(<Card />);
   });
 
+  it("should render a img", () => {
+    const { getByTestId } = render(<Card />);
+
+    const imgElement = getByTestId("me-img");
+
+    expect(imgElement).toBeTruthy();
+    expect(imgElement).toBeOnTheScreen();
+  });
+
   it("should render a title", () => {
     const { getByText } = render(<Card />);
 
     const titleElement = getByText("card.title");
 
     expect(titleElement).toBeTruthy();
+    expect(titleElement).toBeOnTheScreen();
   });
 
   it("should render a text presentation", () => {
@@ -38,5 +48,6 @@ describe("Card Component", () => {
     const textElement = getByText("card.presentation");
 
     expect(textElement).toBeTruthy();
+    expect(textElement).toBeOnTheScreen();
   });
 });
