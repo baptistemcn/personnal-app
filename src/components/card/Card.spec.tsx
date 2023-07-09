@@ -10,6 +10,15 @@ jest.mock("@shopify/restyle", () => {
   return RealModule;
 });
 
+jest.mock("react-i18next", () => ({
+  useTranslation: () => ({
+    t: (key: unknown) => key,
+    i18n: {
+      changeLanguage: jest.fn(),
+    },
+  }),
+}));
+
 describe("Card Component", () => {
   it("should render", () => {
     render(<Card />);
@@ -18,7 +27,7 @@ describe("Card Component", () => {
   it("should render a title", () => {
     const { getByText } = render(<Card />);
 
-    const titleElement = getByText("Développeur Front-End");
+    const titleElement = getByText("card.title");
 
     expect(titleElement).toBeTruthy();
   });
@@ -26,9 +35,7 @@ describe("Card Component", () => {
   it("should render a text presentation", () => {
     const { getByText } = render(<Card />);
 
-    const textElement = getByText(
-      "Hey, je suis Baptiste Marcon, développeur basé en France 📍",
-    );
+    const textElement = getByText("card.presentation");
 
     expect(textElement).toBeTruthy();
   });

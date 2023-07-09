@@ -1,13 +1,15 @@
 import { Box, Text } from "@theme";
+import { useTranslation } from "react-i18next";
 
 export const Card = () => {
+  const { t } = useTranslation();
   return (
     <Box>
       <Text variant="title1" padding="m">
-        Développeur Front-End
+        {t("card.title")}
       </Text>
       <Text variant="text" padding="m">
-        Hey, je suis Baptiste Marcon, développeur basé en France 📍
+        {t("card.presentation")}
       </Text>
     </Box>
   );
