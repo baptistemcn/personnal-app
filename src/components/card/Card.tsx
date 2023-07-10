@@ -5,12 +5,13 @@ import { ME } from "@assets";
 import { Box, Text } from "@theme";
 
 import { styles } from "./card.styles";
+import { Wrapper } from "../wrapper/Wrapper";
 
 export const Card = () => {
   const { t } = useTranslation();
 
   return (
-    <Box>
+    <Wrapper>
       <Box alignItems={"center"}>
         <Image source={ME} style={styles.img} testID="me-img" />
       </Box>
@@ -20,6 +21,6 @@ export const Card = () => {
       <Text variant="text" padding="m">
         {t("card.presentation")}
       </Text>
-    </Box>
+    </Wrapper>
   );
 };
