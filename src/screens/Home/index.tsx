@@ -1,6 +1,7 @@
-import { Card } from "@components";
 import { createStackNavigator } from "@react-navigation/stack";
-import { HomeRoutes } from "src/routes";
+
+import { Card } from "@components";
+import { HomeRoutes } from "@routes";
 
 const HomeStack = createStackNavigator<HomeRoutes>();
 

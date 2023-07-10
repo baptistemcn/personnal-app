@@ -7,6 +7,8 @@
       "@assets": ["src/assets/index"],
       "@components": ["src/components/index"],
       "@i18n": ["src/i18n/index"],
+      "@routes": ["src/routes"],
+      "@screens": ["src/screens/index"],
       "@theme": ["src/theme/index"]
     }
   }

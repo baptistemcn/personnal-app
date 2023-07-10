@@ -1,1 +1,1 @@
-export { HomeNavigator } from "./Home";
+export { HomeNavigator } from "./home";

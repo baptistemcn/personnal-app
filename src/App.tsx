@@ -5,9 +5,8 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import i18n from "@i18n";
 import { ThemeProvider } from "@theme";
-
-import { AppRoutes } from "./routes";
-import { HomeNavigator } from "./screens";
+import { AppRoutes } from "@routes";
+import { HomeNavigator } from "@screens";
 
 const AppStack = createStackNavigator<AppRoutes>();
 
