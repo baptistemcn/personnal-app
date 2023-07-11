@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 
-import { Card } from "@components";
 import { HomeRoutes } from "@routes";
+import { Welcome } from "./welcome/Welcome";
 
 const HomeStack = createStackNavigator<HomeRoutes>();
 
@@ -14,7 +14,7 @@ export const HomeNavigator = () => {
           headerShadowVisible: false,
           headerShown: false,
         }}
-        component={Card}
+        component={Welcome}
       />
     </HomeStack.Navigator>
   );
