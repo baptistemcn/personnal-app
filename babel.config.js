@@ -13,6 +13,7 @@ module.exports = function (api) {
             "@routes": "./src/routes",
             "@screens": "./src/screens",
             "@theme": "./src/theme",
+            "@types": "./src/types",
           },
           extensions: [".ts", ".tsx"],
         },

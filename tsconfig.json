@@ -9,7 +9,8 @@
       "@i18n": ["src/i18n/index"],
       "@routes": ["src/routes"],
       "@screens": ["src/screens/index"],
-      "@theme": ["src/theme/index"]
+      "@theme": ["src/theme/index"],
+      "@types": ["src/types/index"]
     }
   }
 }
