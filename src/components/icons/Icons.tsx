@@ -16,7 +16,7 @@ export const Icons = ({ link, name, source, styles }: IconsProps) => {
   return (
     <Box padding={"m"}>
       <TouchableOpacity onPress={handleClick} aria-label={name}>
-        <ReImage source={source} styles={styles} />
+        <ReImage source={source} styles={styles} testID="icon" />
       </TouchableOpacity>
     </Box>
   );
