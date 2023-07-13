@@ -1,4 +1,8 @@
 import { render } from "@testing-library/react-native";
+import { StyleSheet } from "react-native";
+
+import { GITHUB, LINKEDIN, ME } from "@assets";
+
 import { Card } from "./Card";
 
 jest.mock("@shopify/restyle", () => {
@@ -19,13 +23,42 @@ jest.mock("react-i18next", () => ({
   }),
 }));
 
+const styles = StyleSheet.create({
+  img: {},
+  icons: {},
+});
+
+const IMG = {
+  source: ME,
+  styles: styles.img,
+  testID: "me-img",
+};
+
+const ICONS = [
+  {
+    source: GITHUB,
+    link: "https://github.com/baptistemcn",
+    name: "Github",
+    styles: styles.icons,
+  },
+  {
+    source: LINKEDIN,
+    link: "https://www.linkedin.com/in/baptiste-marcon/",
+    name: "Linkedin",
+    styles: styles.icons,
+  },
+];
+
+const mockTitle = "test1";
+const mockText = "test2";
+
 describe("Card Component", () => {
   it("should render", () => {
-    render(<Card />);
+    render(<Card icons={ICONS} img={IMG} title={mockTitle} text={mockText} />);
   });
 
   it("should render a img", () => {
-    const { getByTestId } = render(<Card />);
+    const { getByTestId } = render(<Card {...ICONS} {...ME} />);
 
     const imgElement = getByTestId("me-img");
 
@@ -34,18 +67,18 @@ describe("Card Component", () => {
   });
 
   it("should render a title", () => {
-    const { getByText } = render(<Card />);
+    const { getByTestId } = render(<Card {...ICONS} {...ME} />);
 
-    const titleElement = getByText("card.title");
+    const titleElement = getByTestId("title");
 
     expect(titleElement).toBeTruthy();
     expect(titleElement).toBeOnTheScreen();
   });
 
   it("should render a text presentation", () => {
-    const { getByText } = render(<Card />);
+    const { getByTestId } = render(<Card {...ICONS} {...ME} />);
 
-    const textElement = getByText("card.presentation");
+    const textElement = getByTestId("text");
 
     expect(textElement).toBeTruthy();
     expect(textElement).toBeOnTheScreen();
