@@ -1,1 +1,1 @@
-export { GITHUB, LINKEDIN, ME } from "./db";
+export { GITHUB, LINKEDIN, ME, ICONS, IMG } from "./db";
