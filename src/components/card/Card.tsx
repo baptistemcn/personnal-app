@@ -1,33 +1,29 @@
-import { useTranslation } from "react-i18next";
-
-import { ME } from "@assets";
 import { Box, Text } from "@theme";
 
 import { ReImage } from "../image/Image";
 import { Wrapper } from "../wrapper/Wrapper";
 
-import { styles } from "./card.styles";
+import { Icons } from "../icons/Icons";
+import { CardProps } from "@types";
 
-export const Card = () => {
-  const { t } = useTranslation();
-
-  const IMG = {
-    source: ME,
-    styles: styles.img,
-    testID: "me-img",
-  };
-
+export const Card = ({ icons, img, text, title }: CardProps) => {
   return (
     <Wrapper>
       <Box alignItems={"center"}>
-        <ReImage {...IMG} />
+        <ReImage {...img} testID="me-img" />
       </Box>
-      <Text variant="title1" padding="m">
-        {t("card.title")}
+      <Text variant="title1" padding="m" testID="title">
+        {title}
       </Text>
-      <Text variant="text" padding="m">
-        {t("card.presentation")}
+      <Text variant="text" padding="m" testID="text">
+        {text}
       </Text>
+
+      <Box flexDirection={"row"}>
+        {icons?.map((icon, index) => (
+          <Icons {...icon} key={index} />
+        ))}
+      </Box>
     </Wrapper>
   );
 };
