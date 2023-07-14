@@ -1,21 +1,31 @@
-import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 import { HomeRoutes } from "@routes";
+import { useTheme } from "@theme";
+
 import { Welcome } from "./welcome/Welcome";
 
-const HomeStack = createStackNavigator<HomeRoutes>();
+const Tab = createBottomTabNavigator<HomeRoutes>();
 
 export const HomeNavigator = () => {
+  const theme = useTheme();
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen
+    <Tab.Navigator>
+      <Tab.Screen
         name="Welcome"
         options={{
           headerShadowVisible: false,
           headerShown: false,
+          tabBarLabel: "Home",
+          tabBarIcon: () => {
+            return (
+              <MaterialIcons name="home" size={32} color={theme.colors.icon} />
+            );
+          },
         }}
         component={Welcome}
       />
-    </HomeStack.Navigator>
+    </Tab.Navigator>
   );
 };
