@@ -8,12 +8,13 @@ export const Welcome = () => {
   const { t } = useTranslation();
 
   return (
-    <Box flex={1}>
+    <Box flex={1} testID="welcome">
       <Card
         icons={ICONS}
         img={IMG}
         title={t("card.title")}
         text={t("card.presentation")}
+        testID="card"
       />
     </Box>
   );
