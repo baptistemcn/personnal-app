@@ -58,7 +58,9 @@ describe("Card Component", () => {
   });
 
   it("should render a img", () => {
-    const { getByTestId } = render(<Card {...ICONS} {...ME} />);
+    const { getByTestId } = render(
+      <Card icons={ICONS} img={IMG} title={mockTitle} text={mockText} />,
+    );
 
     const imgElement = getByTestId("me-img");
 
@@ -67,7 +69,9 @@ describe("Card Component", () => {
   });
 
   it("should render a title", () => {
-    const { getByTestId } = render(<Card {...ICONS} {...ME} />);
+    const { getByTestId } = render(
+      <Card icons={ICONS} img={IMG} title={mockTitle} text={mockText} />,
+    );
 
     const titleElement = getByTestId("title");
 
@@ -76,7 +80,9 @@ describe("Card Component", () => {
   });
 
   it("should render a text presentation", () => {
-    const { getByTestId } = render(<Card {...ICONS} {...ME} />);
+    const { getByTestId } = render(
+      <Card icons={ICONS} img={IMG} title={mockTitle} text={mockText} />,
+    );
 
     const textElement = getByTestId("text");
 
