@@ -6,9 +6,9 @@ import { Wrapper } from "../wrapper/Wrapper";
 import { Icons } from "../icons/Icons";
 import { CardProps } from "@types";
 
-export const Card = ({ icons, img, text, title }: CardProps) => {
+export const Card = ({ icons, img, testID, text, title }: CardProps) => {
   return (
-    <Wrapper>
+    <Wrapper testID={testID}>
       <Box alignItems={"center"}>
         <ReImage {...img} testID="me-img" />
       </Box>
