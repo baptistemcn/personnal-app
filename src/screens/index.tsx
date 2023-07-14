@@ -5,6 +5,7 @@ import { HomeRoutes } from "@routes";
 import { useTheme } from "@theme";
 
 import { Welcome } from "./welcome/Welcome";
+import { About } from "./about/About";
 
 const Tab = createBottomTabNavigator<HomeRoutes>();
 
@@ -25,6 +26,20 @@ export const HomeNavigator = () => {
           },
         }}
         component={Welcome}
+      />
+      <Tab.Screen
+        name="About"
+        options={{
+          headerShadowVisible: false,
+          headerShown: false,
+          tabBarLabel: "About",
+          tabBarIcon: () => {
+            return (
+              <MaterialIcons name="info" size={32} color={theme.colors.icon} />
+            );
+          },
+        }}
+        component={About}
       />
     </Tab.Navigator>
   );
