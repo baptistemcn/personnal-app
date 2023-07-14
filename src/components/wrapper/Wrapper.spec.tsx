@@ -4,7 +4,7 @@ import { Wrapper } from "./Wrapper";
 describe("Wrapper component", () => {
   const wrapperMock = "S-CREW";
   it("should render", () => {
-    render(<Wrapper>{undefined}</Wrapper>);
+    render(<Wrapper>{wrapperMock}</Wrapper>);
   });
 
   it("should render children inside wrapper", () => {
