@@ -4,16 +4,12 @@ import { Box } from "@theme";
 
 interface WrapperProps {
   children: ReactNode;
+  testID?: string;
 }
 
-export const Wrapper = ({ children }: WrapperProps) => {
+export const Wrapper = ({ children, testID = "wrapper" }: WrapperProps) => {
   return (
-    <Box
-      flex={1}
-      alignContent={"center"}
-      alignItems={"center"}
-      testID="wrapper"
-    >
+    <Box flex={1} alignContent={"center"} alignItems={"center"} testID={testID}>
       {children}
     </Box>
   );
