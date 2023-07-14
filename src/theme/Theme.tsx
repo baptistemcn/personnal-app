@@ -22,6 +22,7 @@ interface ThemeProviderProps {
 const theme = createTheme({
   colors: {
     background: palette.white,
+    icon: palette.grey,
     text: palette.black,
   },
   spacing: {
