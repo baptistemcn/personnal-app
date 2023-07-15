@@ -17,16 +17,16 @@ export const Experience = () => {
       backgroundColor={"background"}
     >
       <Box>
-        <Text variant={"title3"} paddingVertical={"s"}>
+        <Text variant={"title3"} paddingVertical={"s"} testID="exp-title">
           Full-Stack Developer - Nehs Digital
         </Text>
-        <Text variant={"date"} paddingVertical={"s"}>
+        <Text variant={"date"} paddingVertical={"s"} testID="exp-date">
           Janv. 2022
         </Text>
       </Box>
       <Line />
       <Box paddingVertical={"m"}>
-        <Text variant={"text"} textAlign={"left"}>
+        <Text variant={"text"} textAlign={"left"} testID="exp-text">
           Dans mon rôle actuel bla bla bla
         </Text>
       </Box>
