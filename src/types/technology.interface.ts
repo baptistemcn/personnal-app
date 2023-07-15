@@ -2,6 +2,6 @@ export interface TechnologyProps {
   technology?: Array<TechnologyItem>;
 }
 
-interface TechnologyItem {
+export interface TechnologyItem {
   name: string;
 }
