@@ -2,7 +2,7 @@ import { Box, Text } from "@theme";
 import { TechnologyProps } from "@types";
 
 export const Technology = ({
-  technology = [{ name: "technology" }],
+  technology = [{ name: "Lorem Ipsum" }],
 }: TechnologyProps) => {
   return (
     <Box flexDirection={"row"}>

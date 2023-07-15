@@ -32,7 +32,7 @@ describe("Technology component", () => {
   it("should render with a default props", () => {
     const { getByText } = render(<Technology />);
 
-    const technologyItem = getByText("technology");
+    const technologyItem = getByText("Lorem Ipsum");
 
     expect(technologyItem).toBeDefined();
     expect(technologyItem).toBeOnTheScreen();
