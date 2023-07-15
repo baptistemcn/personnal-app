@@ -3,6 +3,10 @@
     "card": {
       "title": "Développeur Front-End",
       "presentation": "Hey, je suis Baptiste Marcon, développeur basé en France 📍"
+    },
+    "about": {
+      "title": "À Propos",
+      "text": "Je suis Baptiste Marcon, développeur Front-End passionné par les expériences interactives et conviviales. Je suis constamment à la recherche de nouvelles technologies et tendances du développement web. \n\n Actuellement chez NEHS Digital, j'ai acquis une solide expertise dans le développement Front-End. Je suis ouvert aux nouvelles opportunités pour collaborer sur des projets intéressants. Consultez mon portfolio pour découvrir mes projets récents. Contactez-moi pour une collaboration ou si vous avez des questions, je serai ravi d'échanger avec vous."
     }
   }
 }
