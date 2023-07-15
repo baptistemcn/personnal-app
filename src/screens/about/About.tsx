@@ -14,7 +14,7 @@ export const About = () => {
       <Text variant={"text"} padding={"l"} testID="text">
         {t("about.text")}
       </Text>
-      <Box style={{ backgroundColor: "red" }}>
+      <Box>
         <Experience />
       </Box>
     </Wrapper>
