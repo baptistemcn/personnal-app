@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 import { ICONS, IMG } from "@assets";
-import { Card } from "@components";
+import { Presentation } from "@components";
 import { Box } from "@theme";
 
 export const Welcome = () => {
@@ -9,7 +9,7 @@ export const Welcome = () => {
 
   return (
     <Box flex={1} testID="welcome">
-      <Card
+      <Presentation
         icons={ICONS}
         img={IMG}
         title={t("card.title")}

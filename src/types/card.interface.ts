@@ -1,7 +1,7 @@
 import type { IconsProps } from "./icons.interface";
 import type { ImageProps } from "./image.interface";
 
-export interface CardProps {
+export interface FrameProps {
   icons: Array<IconsProps>;
   img: ImageProps;
   title: string;

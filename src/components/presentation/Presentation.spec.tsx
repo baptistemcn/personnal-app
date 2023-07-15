@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 import { GITHUB, LINKEDIN, ME } from "@assets";
 
-import { Card } from "./Card";
+import { Presentation } from "./Presentation";
 
 jest.mock("@shopify/restyle", () => {
   const RealModule = jest.requireActual("@shopify/restyle");
@@ -54,12 +54,24 @@ const mockText = "test2";
 
 describe("Card Component", () => {
   it("should render", () => {
-    render(<Card icons={ICONS} img={IMG} title={mockTitle} text={mockText} />);
+    render(
+      <Presentation
+        icons={ICONS}
+        img={IMG}
+        title={mockTitle}
+        text={mockText}
+      />,
+    );
   });
 
   it("should render a img", () => {
     const { getByTestId } = render(
-      <Card icons={ICONS} img={IMG} title={mockTitle} text={mockText} />,
+      <Presentation
+        icons={ICONS}
+        img={IMG}
+        title={mockTitle}
+        text={mockText}
+      />,
     );
 
     const imgElement = getByTestId("me-img");
@@ -70,7 +82,12 @@ describe("Card Component", () => {
 
   it("should render a title", () => {
     const { getByTestId } = render(
-      <Card icons={ICONS} img={IMG} title={mockTitle} text={mockText} />,
+      <Presentation
+        icons={ICONS}
+        img={IMG}
+        title={mockTitle}
+        text={mockText}
+      />,
     );
 
     const titleElement = getByTestId("title");
@@ -81,7 +98,12 @@ describe("Card Component", () => {
 
   it("should render a text presentation", () => {
     const { getByTestId } = render(
-      <Card icons={ICONS} img={IMG} title={mockTitle} text={mockText} />,
+      <Presentation
+        icons={ICONS}
+        img={IMG}
+        title={mockTitle}
+        text={mockText}
+      />,
     );
 
     const textElement = getByTestId("text");

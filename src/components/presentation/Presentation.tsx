@@ -4,9 +4,15 @@ import { ReImage } from "../image/Image";
 import { Wrapper } from "../wrapper/Wrapper";
 
 import { Icons } from "../icons/Icons";
-import { CardProps } from "@types";
+import { FrameProps } from "@types";
 
-export const Card = ({ icons, img, testID, text, title }: CardProps) => {
+export const Presentation = ({
+  icons,
+  img,
+  testID,
+  text,
+  title,
+}: FrameProps) => {
   return (
     <Wrapper testID={testID}>
       <Box alignItems={"center"}>

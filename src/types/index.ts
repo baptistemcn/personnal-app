@@ -1,4 +1,4 @@
-export type { CardProps } from "./card.interface";
+export type { FrameProps } from "./card.interface";
 export type { ExperienceProps } from "./experience.interface";
 export type { IconsProps } from "./icons.interface";
 export type { ImageProps } from "./image.interface";
