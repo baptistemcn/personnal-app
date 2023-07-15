@@ -24,6 +24,7 @@ const theme = createTheme({
     background: palette.white,
     icon: palette.grey,
     text: palette.black,
+    shadow: palette.shadow,
   },
   spacing: {
     s: spacing.s,
@@ -47,8 +48,25 @@ const theme = createTheme({
       color: "text",
       textAlign: "center",
     },
-    text: {
+    title2: {
+      fontSize: 24,
+      color: "text",
+      textAlign: "center",
+    },
+    title3: {
+      fontSize: 20,
+      color: "text",
+      fontWeight: "bold",
+      textAlign: "left",
+    },
+    date: {
       fontSize: 18,
+      color: "text",
+      fontStyle: "italic",
+      textAlign: "left",
+    },
+    text: {
+      fontSize: 16,
       color: "text",
       textAlign: "center",
     },
