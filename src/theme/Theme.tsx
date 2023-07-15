@@ -25,8 +25,10 @@ const theme = createTheme({
     icon: palette.grey,
     text: palette.black,
     shadow: palette.shadow,
+    blue: palette.blue,
   },
   spacing: {
+    xs: spacing.xs,
     s: spacing.s,
     m: spacing.m,
     l: spacing.l,
