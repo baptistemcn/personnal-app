@@ -1,7 +1,9 @@
-import { Box, Text } from "@theme";
+import { Box, Text, useTheme } from "@theme";
 import { Line } from "../line/Line";
+import { Technology } from "../technology/Technology";
 
 export const Experience = () => {
+  const theme = useTheme();
   return (
     <Box
       maxWidth={"90%"}
@@ -24,11 +26,15 @@ export const Experience = () => {
           Janv. 2022
         </Text>
       </Box>
-      <Line />
+      <Line color={theme.colors.blue} height={2} />
       <Box paddingVertical={"m"}>
         <Text variant={"text"} textAlign={"left"} testID="exp-text">
           Dans mon rôle actuel bla bla bla
         </Text>
+      </Box>
+      <Line />
+      <Box paddingVertical={"m"}>
+        <Technology />
       </Box>
     </Box>
   );
