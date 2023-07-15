@@ -1,6 +1,6 @@
-import { Wrapper } from "@components";
+import { Experience, Wrapper } from "@components";
 
-import { Text } from "@theme";
+import { Box, Text } from "@theme";
 import { useTranslation } from "react-i18next";
 
 export const About = () => {
@@ -14,6 +14,9 @@ export const About = () => {
       <Text variant={"text"} padding={"l"} testID="text">
         {t("about.text")}
       </Text>
+      <Box style={{ backgroundColor: "red" }}>
+        <Experience />
+      </Box>
     </Wrapper>
   );
 };
