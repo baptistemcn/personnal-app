@@ -5,7 +5,7 @@ export const Technology = ({
   technology = [{ name: "Lorem Ipsum" }],
 }: TechnologyProps) => {
   return (
-    <Box flexDirection={"row"}>
+    <Box flexDirection={"row"} flexWrap={"wrap"}>
       {technology?.map((item, index) => (
         <Box key={index} flexDirection={"row"}>
           <Text paddingHorizontal={"xs"} key={index}>
