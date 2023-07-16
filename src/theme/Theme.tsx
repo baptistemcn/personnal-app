@@ -19,7 +19,7 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-const theme = createTheme({
+export const theme = createTheme({
   colors: {
     background: palette.white,
     icon: palette.grey,
