@@ -20,7 +20,7 @@ export default function App() {
               <AppStack.Screen
                 name="Home"
                 options={{
-                  title: "Baptiste",
+                  title: "Baptiste Marcon",
                 }}
                 component={HomeNavigator}
               />
