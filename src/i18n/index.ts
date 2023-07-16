@@ -3,9 +3,11 @@ import { initReactI18next } from "react-i18next";
 import * as SecureStore from "expo-secure-store";
 import { getLocales } from "expo-localization";
 
+import * as en from "./translations/en.json";
 import * as fr from "./translations/fr.json";
 
 const locales = {
+  en,
   fr,
 };
 
