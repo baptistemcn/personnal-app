@@ -3,9 +3,14 @@ import { useTranslation } from "react-i18next";
 import { Experience, Wrapper } from "@components";
 import { Box, Text } from "@theme";
 import { ScrollView } from "react-native";
+import { experiences } from "@assets";
 
 export const About = () => {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
+
+  const lang = i18n.language;
+
+  const EXPERIENCES = experiences(lang);
 
   return (
     <ScrollView>
@@ -17,7 +22,7 @@ export const About = () => {
           {t("about.text")}
         </Text>
         <Box>
-          <Experience />
+          <Experience experiences={EXPERIENCES} />
         </Box>
       </Wrapper>
     </ScrollView>
