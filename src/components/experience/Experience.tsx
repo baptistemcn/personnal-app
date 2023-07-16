@@ -4,19 +4,19 @@ import { Technology } from "../technology/Technology";
 import { ExperienceProps } from "@types";
 
 export const Experience = ({
-  experience = [
+  experiences = [
     {
       name: "Lorem Ipsum",
-      duraction: "NaN",
       presentation: "Lorem Ipsum",
-      technology: [{ name: "Lorem Ipsum" }],
+      duration: "NaN",
+      technologies: [{ name: "Lorem Ipsum" }, { name: "Lorem Ipsum" }],
     },
   ],
 }: ExperienceProps) => {
   const theme = useTheme();
   return (
     <>
-      {experience?.map((exp, index) => (
+      {experiences?.map((exp, index) => (
         <Box
           maxWidth={"90%"}
           minWidth={"90%"}
@@ -37,7 +37,7 @@ export const Experience = ({
               {exp.name}
             </Text>
             <Text variant={"date"} paddingVertical={"s"} testID="exp-date">
-              {exp.duraction}
+              {exp.duration}
             </Text>
           </Box>
           {exp.presentation && (
@@ -50,11 +50,11 @@ export const Experience = ({
               </Box>
             </>
           )}
-          {exp.technology && (
+          {exp.technologies && (
             <>
               <Line />
               <Box paddingVertical={"m"}>
-                <Technology />
+                <Technology technology={exp.technologies} />
               </Box>
             </>
           )}

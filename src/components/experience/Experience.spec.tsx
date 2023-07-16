@@ -13,7 +13,7 @@ jest.mock("@shopify/restyle", () => {
 const mockExperience = [
   {
     name: "Lorem Ipsum name",
-    duraction: "NaN NaN",
+    duration: "NaN NaN",
     presentation: "Lorem Ipsum presentation",
     technology: [{ name: "Lorem Ipsum tech" }],
   },
@@ -36,7 +36,7 @@ describe("Experience component", () => {
   });
 
   it("should render a props title", () => {
-    const { getByTestId } = render(<Experience experience={mockExperience} />);
+    const { getByTestId } = render(<Experience experiences={mockExperience} />);
 
     const titleElement = getByTestId("exp-title");
 
@@ -60,7 +60,7 @@ describe("Experience component", () => {
   });
 
   it("should render a props date", () => {
-    const { getByTestId } = render(<Experience experience={mockExperience} />);
+    const { getByTestId } = render(<Experience experiences={mockExperience} />);
 
     const dateElement = getByTestId("exp-date");
 
@@ -81,7 +81,7 @@ describe("Experience component", () => {
   });
 
   it("should render a props presentation text", () => {
-    const { getByTestId } = render(<Experience experience={mockExperience} />);
+    const { getByTestId } = render(<Experience experiences={mockExperience} />);
 
     const textElement = getByTestId("exp-text");
 
