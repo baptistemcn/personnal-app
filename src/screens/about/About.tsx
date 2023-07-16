@@ -21,6 +21,9 @@ export const About = () => {
         <Text variant={"text"} padding={"l"} testID="text">
           {t("about.text")}
         </Text>
+        <Text variant={"title3"} padding={"l"} testID="title2">
+          {t("about.title2")}
+        </Text>
         <Box>
           <Experience experiences={EXPERIENCES} />
         </Box>
