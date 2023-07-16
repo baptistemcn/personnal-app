@@ -2,6 +2,7 @@ import { Box, Text, useTheme } from "@theme";
 import { Line } from "../line/Line";
 import { Technology } from "../technology/Technology";
 import { ExperienceProps } from "@types";
+import { Card } from "../card/Card";
 
 export const Experience = ({
   experiences = [
@@ -17,21 +18,7 @@ export const Experience = ({
   return (
     <>
       {experiences?.map((exp, index) => (
-        <Box
-          maxWidth={"90%"}
-          minWidth={"90%"}
-          padding={"s"}
-          borderRadius={"m"}
-          shadowColor={"shadow"}
-          shadowOffset={{
-            width: -2,
-            height: 4,
-          }}
-          shadowOpacity={0.2}
-          shadowRadius={3}
-          backgroundColor={"background"}
-          key={index}
-        >
+        <Card key={index}>
           <Box>
             <Text variant={"title3"} paddingVertical={"s"} testID="exp-title">
               {exp.name}
@@ -58,7 +45,7 @@ export const Experience = ({
               </Box>
             </>
           )}
-        </Box>
+        </Card>
       ))}
     </>
   );
