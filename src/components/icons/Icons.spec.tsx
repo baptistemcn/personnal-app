@@ -15,7 +15,10 @@ jest.mock("@shopify/restyle", () => {
 });
 
 const styles = StyleSheet.create({
-  icons: {},
+  icons: {
+    height: 32,
+    width: 32,
+  },
 });
 
 const mockIcons = {
@@ -37,6 +40,8 @@ describe("Icons component", () => {
 
     expect(iconElement).toBeTruthy();
     expect(iconElement).toBeOnTheScreen();
+
+    expect(iconElement._fiber.stateNode.props).toBeDefined();
   });
 
   it("should redirect to link on icon click", () => {
@@ -58,7 +63,9 @@ describe("Icons component", () => {
     const iconElement = getByTestId("icon");
 
     expect(iconElement).toBeTruthy();
-    expect(iconElement.props.source).toBe(mockIcons.source);
+    expect(iconElement).toBeOnTheScreen();
+
+    expect(iconElement.props.source).toEqual(mockIcons.source);
   });
 
   it("should render an img with defined styles", () => {
@@ -67,6 +74,11 @@ describe("Icons component", () => {
     const iconElement = getByTestId("icon");
 
     expect(iconElement).toBeTruthy();
-    expect(iconElement.props.styles).toBe(undefined);
+    expect(iconElement).toBeOnTheScreen();
+
+    expect(iconElement._fiber.stateNode.props.style).toEqual({
+      width: 32,
+      height: 32,
+    });
   });
 });
