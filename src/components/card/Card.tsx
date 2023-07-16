@@ -31,6 +31,7 @@ export const Card = ({
       shadowOpacity={shadowOpacity}
       shadowRadius={shadowRadius}
       style={styles}
+      testID="card"
     >
       {children}
     </Box>
