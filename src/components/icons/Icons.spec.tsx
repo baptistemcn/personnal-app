@@ -16,8 +16,8 @@ jest.mock("@shopify/restyle", () => {
 
 const styles = StyleSheet.create({
   icons: {
-    height: 32,
-    width: 32,
+    height: 64,
+    width: 64,
   },
 });
 
@@ -30,10 +30,22 @@ const mockIcons = {
 
 describe("Icons component", () => {
   it("should render", () => {
-    render(<Icons {...mockIcons} />);
+    render(<Icons />);
   });
 
-  it("should render an icon", () => {
+  it("should render an icon with default props", () => {
+    const { getByTestId } = render(<Icons />);
+
+    const iconElement = getByTestId("icon");
+
+    expect(iconElement).toBeTruthy();
+    expect(iconElement).toBeOnTheScreen();
+
+    expect(iconElement._fiber.stateNode.props.source).toBeDefined();
+    expect(iconElement._fiber.stateNode.props.source).toEqual(1);
+  });
+
+  it("should render an icon with passing props", () => {
     const { getByTestId } = render(<Icons {...mockIcons} />);
 
     const iconElement = getByTestId("icon");
@@ -41,23 +53,53 @@ describe("Icons component", () => {
     expect(iconElement).toBeTruthy();
     expect(iconElement).toBeOnTheScreen();
 
-    expect(iconElement._fiber.stateNode.props).toBeDefined();
+    expect(iconElement._fiber.stateNode.props.source).toBeDefined();
+    expect(iconElement._fiber.stateNode.props.source).toEqual(1);
   });
 
-  it("should redirect to link on icon click", () => {
+  it("should render with a default link props and redirect on click", () => {
+    const dummyLink = "https://github.com/baptistemcn";
+    const { getByTestId } = render(<Icons />);
+
+    const iconElement = getByTestId("icon");
+
+    expect(iconElement).toBeTruthy();
+    expect(iconElement).toBeOnTheScreen();
+
+    fireEvent.press(iconElement);
+
+    expect(Linking.openURL).toHaveBeenCalled();
+    expect(Linking.openURL).toHaveBeenCalledWith(dummyLink);
+  });
+
+  it("should render with a defined props a link on icon and redirect on click", () => {
     const link = mockIcons.link;
 
     const { getByTestId } = render(<Icons {...mockIcons} />);
 
     const iconElement = getByTestId("icon");
 
+    expect(iconElement).toBeTruthy();
+    expect(iconElement).toBeOnTheScreen();
+
     fireEvent.press(iconElement);
 
-    expect(Linking.openURL).toHaveBeenCalledTimes(1);
+    expect(Linking.openURL).toHaveBeenCalled();
     expect(Linking.openURL).toHaveBeenCalledWith(link);
   });
 
-  it("should render an img in the icons", () => {
+  it("should render an dummy img in the icons with default props", () => {
+    const { getByTestId } = render(<Icons />);
+
+    const iconElement = getByTestId("icon");
+
+    expect(iconElement).toBeTruthy();
+    expect(iconElement).toBeOnTheScreen();
+
+    expect(iconElement._fiber.stateNode.props.source).toEqual(1);
+  });
+
+  it("should render an img in the icons when passing props", () => {
     const { getByTestId } = render(<Icons {...mockIcons} />);
 
     const iconElement = getByTestId("icon");
@@ -65,7 +107,21 @@ describe("Icons component", () => {
     expect(iconElement).toBeTruthy();
     expect(iconElement).toBeOnTheScreen();
 
-    expect(iconElement.props.source).toEqual(mockIcons.source);
+    expect(iconElement._fiber.stateNode.props.source).toEqual(mockIcons.source);
+  });
+
+  it("should render a dummy img with default props", () => {
+    const { getByTestId } = render(<Icons />);
+
+    const iconElement = getByTestId("icon");
+
+    expect(iconElement).toBeTruthy();
+    expect(iconElement).toBeOnTheScreen();
+
+    expect(iconElement._fiber.stateNode.props.style).toEqual({
+      height: 32,
+      width: 32,
+    });
   });
 
   it("should render an img with defined styles", () => {
@@ -77,8 +133,8 @@ describe("Icons component", () => {
     expect(iconElement).toBeOnTheScreen();
 
     expect(iconElement._fiber.stateNode.props.style).toEqual({
-      width: 32,
-      height: 32,
+      width: 64,
+      height: 64,
     });
   });
 });

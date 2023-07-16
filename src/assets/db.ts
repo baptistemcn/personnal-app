@@ -1,8 +1,10 @@
+import dummyimg from "./img/dummy-img.jpg";
 import img from "./img/baptiste-marcon.webp";
 import github from "./img/github.png";
 import linkedin from "./img/linkedin.png";
 import { styles } from "./styles";
 
+export const DUMMYIMG = dummyimg;
 export const ME = img;
 export const GITHUB = github;
 export const LINKEDIN = linkedin;
