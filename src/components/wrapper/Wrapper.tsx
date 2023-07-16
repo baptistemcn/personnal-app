@@ -1,11 +1,5 @@
-import { ReactNode } from "react";
-
 import { Box } from "@theme";
-
-interface WrapperProps {
-  children: ReactNode;
-  testID?: string;
-}
+import { WrapperProps } from "@types";
 
 export const Wrapper = ({ children, testID = "wrapper" }: WrapperProps) => {
   return (
