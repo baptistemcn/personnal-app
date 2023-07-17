@@ -22,6 +22,7 @@ jest.mock("react-i18next", () => ({
 const mockProps = {
   title: "about.title",
   text: "about.text",
+  subtitle: "about.title2",
 };
 
 describe("About Screen", () => {
@@ -51,5 +52,16 @@ describe("About Screen", () => {
     expect(textElement).toBeOnTheScreen();
 
     expect(textElement._fiber.stateNode.props.children).toEqual(mockProps.text);
+  });
+
+  it("should render a subtitle", () => {
+    const { getByTestId } = render(<About />);
+
+    const subtitleElement = getByTestId("title2");
+
+    expect(subtitleElement).toBeTruthy();
+    expect(subtitleElement).toBeOnTheScreen();
+
+    expect(subtitleElement.props.children).toEqual(mockProps.subtitle);
   });
 });
