@@ -2,7 +2,8 @@
   "translation": {
     "tabs": {
       "home": "Accueil",
-      "about": "À propos"
+      "about": "À propos",
+      "certifications": "Certifications"
     },
     "card": {
       "title": "Développeur Front-End",

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
@@ -6,7 +7,7 @@ import { useTheme } from "@theme";
 
 import { Welcome } from "./welcome/Welcome";
 import { About } from "./about/About";
-import { useTranslation } from "react-i18next";
+import { Certifications } from "./certifications/Certifications";
 
 const Tab = createBottomTabNavigator<HomeRoutes>();
 
@@ -42,6 +43,24 @@ export const HomeNavigator = () => {
           },
         }}
         component={About}
+      />
+      <Tab.Screen
+        name="Certifications"
+        options={{
+          headerShadowVisible: false,
+          headerShown: false,
+          tabBarLabel: t("tabs.certifications"),
+          tabBarIcon: () => {
+            return (
+              <MaterialIcons
+                name="card-membership"
+                size={32}
+                color={theme.colors.icon}
+              />
+            );
+          },
+        }}
+        component={Certifications}
       />
     </Tab.Navigator>
   );
