@@ -4,15 +4,24 @@ import { ReImage } from "../image/Image";
 import { Wrapper } from "../wrapper/Wrapper";
 
 import { Icons } from "../icons/Icons";
-import { FrameProps } from "@types";
+import { PresentationProps } from "@types";
+import { DUMMYIMG } from "@assets";
 
 export const Presentation = ({
-  icons,
-  img,
-  testID,
-  text,
-  title,
-}: FrameProps) => {
+  icons = [
+    {
+      source: DUMMYIMG,
+      link: "https://lorem.ipsum",
+      name: "Lorem Ipsum Name",
+      styles: {},
+      testID: "icons",
+    },
+  ],
+  img = DUMMYIMG,
+  testID = "presentation",
+  text = "Lorem Ipsum Text",
+  title = "Lorem Ipsum Title",
+}: PresentationProps) => {
   return (
     <Wrapper testID={testID}>
       <Box alignItems={"center"}>
