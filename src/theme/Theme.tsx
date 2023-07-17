@@ -61,6 +61,12 @@ export const theme = createTheme({
       fontWeight: "bold",
       textAlign: "left",
     },
+    title4: {
+      fontSize: 18,
+      color: "text",
+      fontWeight: "bold",
+      textAlign: "center",
+    },
     date: {
       fontSize: 18,
       color: "text",
