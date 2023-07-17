@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react-native";
 import { StyleSheet } from "react-native";
 
-import { ME } from "@assets";
+import { DUMMYIMG, ME } from "@assets";
 
 import { ReImage } from "./Image";
 
@@ -23,13 +23,15 @@ describe("ReImage Component", () => {
     render(<ReImage {...mockImg} />);
   });
 
-  it("should render an img", () => {
-    const { getByTestId } = render(<ReImage {...mockImg} />);
+  it("should render a dummy img", () => {
+    const { getByTestId } = render(<ReImage />);
 
-    const imgElement = getByTestId("test");
+    const imgElement = getByTestId("img");
 
     expect(imgElement).toBeTruthy();
     expect(imgElement).toBeOnTheScreen();
+
+    expect(imgElement._fiber.stateNode.props.source).toEqual(DUMMYIMG);
   });
 
   it("should render an img with a source", () => {
@@ -37,7 +39,24 @@ describe("ReImage Component", () => {
 
     const imgElement = getByTestId("test");
 
-    expect(imgElement.props.source).toBe(mockImg.source);
+    expect(imgElement).toBeTruthy();
+    expect(imgElement).toBeOnTheScreen();
+
+    expect(imgElement._fiber.stateNode.props.source).toEqual(mockImg.source);
+  });
+
+  it("should render an img with default style props", () => {
+    const { getByTestId } = render(<ReImage />);
+
+    const imgElement = getByTestId("img");
+
+    expect(imgElement).toBeTruthy();
+    expect(imgElement).toBeOnTheScreen();
+
+    expect(imgElement._fiber.stateNode.props.style).toEqual({
+      height: 64,
+      width: 64,
+    });
   });
 
   it("should render an img with styles", () => {
@@ -45,6 +64,9 @@ describe("ReImage Component", () => {
 
     const imgElement = getByTestId("test");
 
-    expect(imgElement.props.style).toBe(mockImg.styles);
+    expect(imgElement).toBeTruthy();
+    expect(imgElement).toBeOnTheScreen();
+
+    expect(imgElement._fiber.stateNode.props.style).toBe(mockImg.styles);
   });
 });
