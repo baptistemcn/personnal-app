@@ -4,5 +4,6 @@ export type { PresentationProps } from "./presentation.interface";
 export type { IconsProps } from "./icons.interface";
 export type { ImageProps } from "./image.interface";
 export type { LineProps } from "./line.interface";
+export type { LinkProps } from "./link.interface";
 export type { TechnologyProps } from "./technology.interface";
 export type { WrapperProps } from "./wrapper.interface";
