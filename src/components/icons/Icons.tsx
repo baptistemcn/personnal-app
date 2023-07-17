@@ -17,19 +17,15 @@ export const Icons = ({
     height: 32,
     width: 32,
   },
+  testID = "icons",
 }: IconsProps) => {
   const handleClick = useCallback(async () => {
     Linking.openURL(link);
   }, [link]);
 
   return (
-    <Box padding={"m"}>
-      <TouchableOpacity
-        onPress={handleClick}
-        aria-label={name}
-        testID="link
-      "
-      >
+    <Box padding={"m"} testID={testID}>
+      <TouchableOpacity onPress={handleClick} aria-label={name} testID="link">
         <ReImage source={source} styles={styles} testID="icon" />
       </TouchableOpacity>
     </Box>

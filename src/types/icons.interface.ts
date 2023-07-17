@@ -5,4 +5,5 @@ export interface IconsProps {
   link?: string;
   name?: string;
   styles?: StyleProp<ImageStyle>;
+  testID?: string;
 }
