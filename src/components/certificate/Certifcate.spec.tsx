@@ -19,12 +19,14 @@ jest.mock("react-i18next", () => ({
   }),
 }));
 
-const mockProps = {
-  inProgress: true,
-  link: "https://google.com/",
-  name: "Google",
-  testID: "google",
-};
+const mockProps = [
+  {
+    inProgress: true,
+    link: "https://google.com/",
+    name: "Google",
+    testID: "google",
+  },
+];
 
 describe("Certicate component", () => {
   it("should render", () => {
@@ -41,7 +43,7 @@ describe("Certicate component", () => {
   });
 
   it("should render with defined props", () => {
-    const { getByTestId } = render(<Certificate {...mockProps} />);
+    const { getByTestId } = render(<Certificate certificate={mockProps} />);
 
     const certificateElement = getByTestId("google");
 
@@ -65,7 +67,7 @@ describe("Certicate component", () => {
   });
 
   it("should render inProgress status with defined props", () => {
-    const { getByTestId } = render(<Certificate {...mockProps} />);
+    const { getByTestId } = render(<Certificate certificate={mockProps} />);
 
     const inProgressElement = getByTestId("inprogress");
 
@@ -87,18 +89,18 @@ describe("Certicate component", () => {
     expect(linkElement).toBeTruthy();
     expect(linkElement).toBeOnTheScreen();
 
-    expect(linkElement.props.children).toEqual("https://github.com");
+    expect(linkElement.props.children).toEqual("https://lorem.ipsum");
   });
 
   it("should render a link with defined props", () => {
-    const { getByTestId } = render(<Certificate {...mockProps} />);
+    const { getByTestId } = render(<Certificate certificate={mockProps} />);
 
     const linkElement = getByTestId("cert-link");
 
     expect(linkElement).toBeTruthy();
     expect(linkElement).toBeOnTheScreen();
 
-    expect(linkElement.props.children).toEqual(mockProps.link);
+    expect(linkElement.props.children).toEqual(mockProps[0].link);
   });
 
   it("should render a name with default props", () => {
@@ -113,13 +115,13 @@ describe("Certicate component", () => {
   });
 
   it("should render a name with defined props", () => {
-    const { getByTestId } = render(<Certificate {...mockProps} />);
+    const { getByTestId } = render(<Certificate certificate={mockProps} />);
 
     const nameElement = getByTestId("cert-name");
 
     expect(nameElement).toBeTruthy();
     expect(nameElement).toBeOnTheScreen();
 
-    expect(nameElement.props.children).toBe(mockProps.name);
+    expect(nameElement.props.children).toBe(mockProps[0].name);
   });
 });
