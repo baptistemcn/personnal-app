@@ -108,7 +108,23 @@ export const CERTIFICATES = [
   {
     name: "Modern Javascript by dev.ui",
     link: "https://ui.dev/c/modern-javascript/",
-    inProgress: true,
     testID: "certification1",
+  },
+  {
+    name: "Classic React by dev.ui",
+    link: "https://ui.dev/c/classic-react/",
+  },
+  {
+    name: "React Hooks by dev.ui",
+    link: "https://ui.dev/c/react-hooks/",
+  },
+  {
+    name: "React Router v5 by dev.ui",
+    link: "https://ui.dev/c/react-router-v5",
+  },
+  {
+    name: "React Router v6 by dev.ui",
+    link: "https://ui.dev/c/react-router",
+    inProgress: true,
   },
 ];

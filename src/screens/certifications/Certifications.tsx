@@ -12,7 +12,7 @@ export const Certifications = () => {
           Certifications
         </Text>
         <Box marginVertical={"l"}>
-          <Certificate certificate={CERTIFICATES} />
+          <Certificate certificate={CERTIFICATES.reverse()} />
         </Box>
       </Wrapper>
     </ScrollView>
