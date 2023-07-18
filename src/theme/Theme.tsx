@@ -78,6 +78,12 @@ export const theme = createTheme({
       color: "text",
       textAlign: "center",
     },
+    link: {
+      fontSize: 16,
+      color: "blue",
+      textAlign: "center",
+      textDecorationLine: "underline",
+    },
   },
 });
 
