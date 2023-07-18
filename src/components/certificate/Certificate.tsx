@@ -1,7 +1,17 @@
-import { Box, Text } from "@theme";
-import { Card } from "../card/Card";
+import { useTranslation } from "react-i18next";
 
-export const Certificate = () => {
+import { Box, Text } from "@theme";
+import { CertificateProps } from "@types";
+
+import { Card } from "../card/Card";
+import { Link } from "../link/Link";
+
+export const Certificate = ({
+  inProgress = true,
+  link = "https://github.com",
+  name = "Lorem Ipsum",
+}: CertificateProps) => {
+  const { t } = useTranslation();
   return (
     <Card>
       <Box
@@ -14,12 +24,14 @@ export const Certificate = () => {
         style={{ gap: 30 }}
       >
         <Text variant={"title4"} marginHorizontal={"s"}>
-          Certificate
+          {name}
         </Text>
-        <Text textAlign={"right"}>inProgress</Text>
+        {inProgress && <Text>({t("certificate.label")})</Text>}
       </Box>
       <Box marginVertical={"m"}>
-        <Text variant={"text"}>Link</Text>
+        <Link link={link}>
+          <Text variant={"link"}>{link}</Text>
+        </Link>
       </Box>
     </Card>
   );
