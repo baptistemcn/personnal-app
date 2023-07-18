@@ -1,5 +1,7 @@
+import { CERTIFICATES } from "@assets";
 import { Certificate, Wrapper } from "@components";
 import { Box, Text } from "@theme";
+
 import { ScrollView } from "react-native";
 
 export const Certifications = () => {
@@ -10,7 +12,7 @@ export const Certifications = () => {
           Certifications
         </Text>
         <Box marginVertical={"l"}>
-          <Certificate />
+          <Certificate certificate={CERTIFICATES} />
         </Box>
       </Wrapper>
     </ScrollView>

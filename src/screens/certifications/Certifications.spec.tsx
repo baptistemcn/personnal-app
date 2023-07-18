@@ -38,13 +38,12 @@ describe("Certifications screen", () => {
   it("should render a certificate card", () => {
     const { getByTestId } = render(<Certifications />);
 
-    const cardElement = getByTestId("certificate");
+    const cardElement = getByTestId("certification1");
 
     expect(cardElement.props.children[0].props).toEqual({
       variant: "title4",
-      marginHorizontal: "s",
       testID: "cert-name",
-      children: "Lorem Ipsum",
+      children: "Modern Javascript by dev.ui",
     });
   });
 });

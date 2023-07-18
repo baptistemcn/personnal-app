@@ -103,3 +103,12 @@ const EXPERIENCES_EN = [
 export const experiences = (language: string) => {
   return language === "fr" ? EXPERIENCES_FR : EXPERIENCES_EN;
 };
+
+export const CERTIFICATES = [
+  {
+    name: "Modern Javascript by dev.ui",
+    link: "https://ui.dev/c/modern-javascript/",
+    inProgress: true,
+    testID: "certification1",
+  },
+];
