@@ -41,9 +41,10 @@ describe("Certifications screen", () => {
     const cardElement = getByTestId("certification1");
 
     expect(cardElement.props.children[0].props).toEqual({
+      children: "Modern Javascript by dev.ui",
+      paddingHorizontal: "m",
       variant: "title4",
       testID: "cert-name",
-      children: "Modern Javascript by dev.ui",
     });
   });
 });

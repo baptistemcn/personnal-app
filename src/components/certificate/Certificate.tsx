@@ -23,15 +23,14 @@ export const Certificate = ({
         <Card key={index}>
           <Box
             flex={1}
-            flexDirection={"column"}
+            flexDirection={"row"}
             alignItems={"center"}
             justifyContent={"space-between"}
             alignSelf={"center"}
-            marginVertical={"m"}
-            style={{ gap: 30 }}
+            marginVertical={"s"}
             testID={cert.testID}
           >
-            <Text variant={"title4"} testID="cert-name">
+            <Text variant={"title4"} testID="cert-name" paddingHorizontal={"m"}>
               {cert.name}
             </Text>
             {cert.inProgress && (
