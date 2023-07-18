@@ -5,6 +5,7 @@ export interface CardProps {
   backgroundColor?: string;
   borderRadius?: number;
   children: ReactNode;
+  margin?: number;
   maxWidth?: string;
   minWidth?: string;
   shadowColor?: string;

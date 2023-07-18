@@ -5,6 +5,7 @@ export const Card = ({
   backgroundColor = theme.colors.background,
   borderRadius = theme.borderRadii.m,
   children,
+  margin = theme.spacing.s,
   maxWidth = "90%",
   minWidth = "90%",
   shadowColor = theme.colors.shadow,
@@ -18,6 +19,7 @@ export const Card = ({
   styles = {
     backgroundColor: backgroundColor,
     borderRadius: borderRadius,
+    margin: margin,
     padding: padding,
     shadowColor: shadowColor,
     shadowOffset: shadowOffet,
