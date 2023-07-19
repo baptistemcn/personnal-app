@@ -18,14 +18,22 @@ export const Project = ({
     <>
       {project?.map((proj, index) => (
         <Card key={index} padding={theme.spacing.m}>
-          <Text variant={"title4"}>{proj.title}</Text>
-          <Box marginVertical={"m"}>
-            <Text variant={"text"}>{proj.description}</Text>
-          </Box>
-          <Box>
-            <Link link={proj.link}>
-              <Text variant={"link"}>{proj.link}</Text>
-            </Link>
+          <Box testID="project">
+            <Text variant={"title4"} testID="title">
+              {proj.title}
+            </Text>
+            <Box marginVertical={"m"}>
+              <Text variant={"text"} testID="description">
+                {proj.description}
+              </Text>
+            </Box>
+            <Box marginVertical={"s"}>
+              <Link link={proj.link}>
+                <Text variant={"link"} testID="link-label">
+                  {proj.link}
+                </Text>
+              </Link>
+            </Box>
           </Box>
         </Card>
       ))}
