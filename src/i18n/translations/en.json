@@ -3,7 +3,8 @@
     "tabs": {
       "home": "Home",
       "about": "About",
-      "certifications": "Certifications"
+      "certifications": "Certifications",
+      "projects": "Projects"
     },
     "card": {
       "title": "Front-end Developer",

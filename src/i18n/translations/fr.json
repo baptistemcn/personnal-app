@@ -3,7 +3,8 @@
     "tabs": {
       "home": "Accueil",
       "about": "À propos",
-      "certifications": "Certifications"
+      "certifications": "Certifications",
+      "projects": "Projets"
     },
     "card": {
       "title": "Développeur Front-End",

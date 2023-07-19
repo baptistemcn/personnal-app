@@ -14,4 +14,5 @@ export type HomeRoutes = {
   Welcome: undefined;
   About: undefined;
   Certifications: undefined;
+  Projects: undefined;
 };

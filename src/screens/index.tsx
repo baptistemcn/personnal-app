@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import { HomeRoutes } from "@routes";
 import { useTheme } from "@theme";
@@ -8,6 +9,7 @@ import { useTheme } from "@theme";
 import { Welcome } from "./welcome/Welcome";
 import { About } from "./about/About";
 import { Certifications } from "./certifications/Certifications";
+import { Projects } from "./projects/Projects";
 
 const Tab = createBottomTabNavigator<HomeRoutes>();
 
@@ -61,6 +63,24 @@ export const HomeNavigator = () => {
           },
         }}
         component={Certifications}
+      />
+      <Tab.Screen
+        name="Projects"
+        options={{
+          headerShadowVisible: false,
+          headerShown: false,
+          tabBarLabel: t("tabs.projects"),
+          tabBarIcon: () => {
+            return (
+              <MaterialCommunityIcons
+                name="test-tube"
+                size={32}
+                color={theme.colors.icon}
+              />
+            );
+          },
+        }}
+        component={Projects}
       />
     </Tab.Navigator>
   );
