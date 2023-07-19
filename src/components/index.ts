@@ -6,5 +6,6 @@ export { ReImage } from "./image/Image";
 export { Line } from "./line/Line";
 export { Link } from "./link/Link";
 export { Presentation } from "./presentation/Presentation";
+export { Project } from "./project/Project";
 export { Technology } from "./technology/Technology";
 export { Wrapper } from "./wrapper/Wrapper";
