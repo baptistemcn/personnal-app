@@ -32,7 +32,7 @@ describe("Certifications screen", () => {
     expect(titleElement).toBeTruthy();
     expect(titleElement).toBeOnTheScreen();
 
-    expect(titleElement.props.children).toEqual("Certifications");
+    expect(titleElement.props.children).toEqual("certificate.title");
   });
 
   it("should render a certificate card", () => {
