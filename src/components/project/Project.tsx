@@ -9,7 +9,10 @@ export const Project = ({
     {
       title: "Lorem Ipsum Title",
       description: "Lorem Ipsum Description",
-      link: "https://lorem.ipsum",
+      host: {
+        link: "https://lorem.ipsum",
+        name: "Github",
+      },
     },
   ],
 }: ProjectProps) => {
@@ -28,9 +31,9 @@ export const Project = ({
               </Text>
             </Box>
             <Box marginVertical={"s"}>
-              <Link link={proj.link}>
+              <Link link={proj.host?.link}>
                 <Text variant={"link"} testID="link-label">
-                  {proj.link}
+                  {proj.host?.name}
                 </Text>
               </Link>
             </Box>

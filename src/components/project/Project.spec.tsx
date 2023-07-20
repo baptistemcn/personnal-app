@@ -14,7 +14,10 @@ const mockProject = [
   {
     title: "mock Title",
     description: "mock Description",
-    link: "mock Link",
+    host: {
+      name: "mock hostname",
+      link: "mock link",
+    },
   },
 ];
 
@@ -89,7 +92,7 @@ describe("Project component", () => {
     );
   });
 
-  it("should render a link with default props", () => {
+  it("should render a link name with default props", () => {
     const { getByTestId } = render(<Project />);
 
     const linkElement = getByTestId("link-label");
@@ -97,10 +100,10 @@ describe("Project component", () => {
     expect(linkElement).toBeTruthy();
     expect(linkElement).toBeOnTheScreen();
 
-    expect(linkElement.props.children).toEqual("https://lorem.ipsum");
+    expect(linkElement.props.children).toEqual("Github");
   });
 
-  it("should render a link with defined props", () => {
+  it("should render a link name with defined props", () => {
     const { getByTestId } = render(<Project project={mockProject} />);
 
     const linkElement = getByTestId("link-label");
@@ -108,6 +111,6 @@ describe("Project component", () => {
     expect(linkElement).toBeTruthy();
     expect(linkElement).toBeOnTheScreen();
 
-    expect(linkElement.props.children).toEqual(mockProject[0].link);
+    expect(linkElement.props.children).toEqual(mockProject[0].host.name);
   });
 });
