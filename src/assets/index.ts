@@ -3,8 +3,9 @@ export {
   DUMMYIMG,
   experiences,
   GITHUB,
-  LINKEDIN,
-  ME,
   ICONS,
   IMG,
+  LINKEDIN,
+  ME,
+  PROJECTS,
 } from "./db";

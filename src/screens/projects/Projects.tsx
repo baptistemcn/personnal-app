@@ -1,6 +1,8 @@
+import { ScrollView } from "react-native";
+
+import { PROJECTS } from "@assets";
 import { Project, Wrapper } from "@components";
 import { Box, Text } from "@theme";
-import { ScrollView } from "react-native";
 
 export const Projects = () => {
   return (
@@ -10,7 +12,7 @@ export const Projects = () => {
           Projects
         </Text>
         <Box marginVertical={"l"}>
-          <Project />
+          <Project project={PROJECTS.reverse()} />
         </Box>
       </Wrapper>
     </ScrollView>

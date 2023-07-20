@@ -128,3 +128,14 @@ export const CERTIFICATES = [
     inProgress: true,
   },
 ];
+
+export const PROJECTS = [
+  {
+    title: "Spotify Profile",
+    description: "Play with Spotify API",
+    host: {
+      name: "Spotify Profile",
+      url: "https://github.com/baptistemcn/spotify-profile/",
+    },
+  },
+];
