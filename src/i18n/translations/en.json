@@ -17,6 +17,9 @@
     },
     "certificate": {
       "label": "In Progress..."
+    },
+    "projects": {
+      "title": "Projects"
     }
   }
 }
