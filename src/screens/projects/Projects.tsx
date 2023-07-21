@@ -10,10 +10,10 @@ export const Projects = () => {
   return (
     <ScrollView>
       <Wrapper>
-        <Text variant={"title1"} marginVertical={"l"}>
+        <Text variant={"title1"} marginVertical={"l"} testID="project-title">
           {t("projects.title")}
         </Text>
-        <Box marginVertical={"l"}>
+        <Box marginVertical={"l"} testID="projects">
           <Project project={PROJECTS.reverse()} />
         </Box>
       </Wrapper>
