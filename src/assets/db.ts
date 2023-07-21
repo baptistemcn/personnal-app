@@ -1,13 +1,17 @@
 import dummyimg from "./img/dummy-img.jpg";
+import frenchflag from "./img/french-flag.png";
 import img from "./img/baptiste-marcon.webp";
 import github from "./img/github.png";
 import linkedin from "./img/linkedin.png";
+import usflag from "./img/us-flag.png";
 import { styles } from "./styles";
 
 export const DUMMYIMG = dummyimg;
+export const FRENCH_FLAG = frenchflag;
 export const ME = img;
 export const GITHUB = github;
 export const LINKEDIN = linkedin;
+export const US_FLAG = usflag;
 
 export const IMG = {
   source: ME,
