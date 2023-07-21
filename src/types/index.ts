@@ -1,6 +1,7 @@
 export type { CardProps } from "./card.interface";
 export type { CertificateProps } from "./certificate.interface";
 export type { ExperienceProps } from "./experience.interface";
+export type { FlagProps } from "./flag.interface";
 export type { PresentationProps } from "./presentation.interface";
 export type { IconsProps } from "./icons.interface";
 export type { ImageProps } from "./image.interface";
