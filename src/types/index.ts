@@ -1,3 +1,4 @@
+export type { ButtonProps } from "./button.interface";
 export type { CardProps } from "./card.interface";
 export type { CertificateProps } from "./certificate.interface";
 export type { ExperienceProps } from "./experience.interface";
