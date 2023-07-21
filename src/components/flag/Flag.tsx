@@ -1,15 +1,11 @@
-import { FlagProps } from "@types";
-import { ReImage } from "../image/Image";
 import { DUMMYIMG } from "@assets";
-import { Box } from "@theme";
+import { FlagProps } from "@types";
+
+import { ReImage } from "../image/Image";
 
 export const Flag = ({
   nation = DUMMYIMG,
   styles = { height: 32, width: 32 },
 }: FlagProps) => {
-  return (
-    <Box margin={"m"}>
-      <ReImage source={nation} styles={styles} testID="flag" />
-    </Box>
-  );
+  return <ReImage source={nation} styles={styles} testID="flag" />;
 };
