@@ -6,7 +6,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import i18n from "@i18n";
 
 import { FRENCH_FLAG } from "@assets";
-import { Flag } from "@components";
+import { LanguagePicker } from "@components";
 import { Box, ThemeProvider } from "@theme";
 import { AppRoutes } from "@routes";
 import { HomeNavigator } from "@screens";
@@ -14,6 +14,14 @@ import { HomeNavigator } from "@screens";
 const AppStack = createStackNavigator<AppRoutes>();
 
 export default function App() {
+  const languagePicker = {
+    button: {},
+    flag: {
+      nation: FRENCH_FLAG,
+      styles: { height: 32, width: 32 },
+    },
+  };
+
   return (
     <ThemeProvider>
       <NavigationContainer>
@@ -24,7 +32,7 @@ export default function App() {
                 headerTitle: undefined,
                 headerRight: () => (
                   <Box margin={"m"}>
-                    <Flag nation={FRENCH_FLAG} />
+                    <LanguagePicker {...languagePicker} />
                   </Box>
                 ),
               }}
