@@ -36,7 +36,7 @@ export const ICONS = [
 
 const EXPERIENCES_FR = [
   {
-    name: "Full-Stack Developper - NEHS Digital",
+    name: "Full-Stack Developpeur - NEHS Digital",
     presentation:
       "Dans mon rôle actuel, je me concentre sur le développement de nouvelles fonctionnalités, la création d'intégrations de design attrayantes et la gestion du code hérité, contribuant ainsi à l'évolution et à l'amélioration continues de nos produits.",
     duration: "Janv. 2022",
