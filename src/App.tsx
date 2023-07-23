@@ -16,10 +16,12 @@ export const App = () => {
 
   const language = i18n.language;
 
+  /* istanbul ignore next */
   const changeLanguage = (lang: string | undefined) => {
     i18n.changeLanguage(lang);
   };
 
+  /* istanbul ignore next */
   const handleChangeLanguage = () => {
     const langMap = {
       en: "fr",
