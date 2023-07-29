@@ -1,25 +1,47 @@
-import { LanguagePickerProps } from "src/types/language-picker.interface";
-import { ReButton } from "../button/Button";
-import { ReImage } from "../image/Image";
-import { DUMMYIMG } from "@assets";
+import { useTranslation } from "react-i18next";
+
+import { FRENCH_FLAG, US_FLAG } from "@assets";
 import { Box } from "@theme";
 
-export const LanguagePicker = ({
-  button = {
-    ariaLabel: "language",
-    testID: "lang-picker",
-  },
-  flag = { nation: DUMMYIMG, styles: { height: 32, width: 32 } },
-  testID = "language-picker",
-}: LanguagePickerProps) => {
+import { ReButton } from "../button/Button";
+import { ReImage } from "../image/Image";
+
+export const LanguagePicker = () => {
+  const { i18n } = useTranslation();
+
+  const language = i18n.language;
+
+  const changeLanguage = (lang: string | undefined) => {
+    i18n.changeLanguage(lang);
+  };
+
+  const handleChangeLanguage = () => {
+    const langMap = {
+      en: "fr",
+      fr: "en",
+    }[language];
+    changeLanguage(langMap);
+  };
+
+  const flags: { [key: string]: string } = {
+    fr: US_FLAG,
+    en: FRENCH_FLAG,
+  };
+
+  const handleFlag = flags[language] || US_FLAG;
+
   return (
-    <Box testID={testID}>
+    <Box testID="language-picker">
       <ReButton
-        ariaLabel={button?.ariaLabel}
-        onPress={button?.onPress}
-        testID={button.testID}
+        ariaLabel="language"
+        onPress={handleChangeLanguage}
+        testID="language-picker"
       >
-        <ReImage source={flag?.nation} styles={flag?.styles} testID="flag" />
+        <ReImage
+          source={handleFlag}
+          styles={{ height: 32, width: 32 }}
+          testID="flag"
+        />
       </ReButton>
     </Box>
   );
