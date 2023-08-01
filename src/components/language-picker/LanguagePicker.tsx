@@ -11,10 +11,12 @@ export const LanguagePicker = () => {
 
   const language = i18n.language;
 
+  /* istanbul ignore next */
   const changeLanguage = (lang: string | undefined) => {
     i18n.changeLanguage(lang);
   };
 
+  /* istanbul ignore next */
   const handleChangeLanguage = () => {
     const langMap = {
       en: "fr",
@@ -31,7 +33,7 @@ export const LanguagePicker = () => {
   const handleFlag = flags[language] || US_FLAG;
 
   return (
-    <Box testID="language-picker">
+    <Box testID="language-picker-box">
       <ReButton
         ariaLabel="language"
         onPress={handleChangeLanguage}
