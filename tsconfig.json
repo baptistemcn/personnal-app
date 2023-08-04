@@ -5,6 +5,7 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
+      "@api": ["src/api/index"],
       "@assets": ["src/assets/index"],
       "@components": ["src/components/index"],
       "@i18n": ["src/i18n/index"],
