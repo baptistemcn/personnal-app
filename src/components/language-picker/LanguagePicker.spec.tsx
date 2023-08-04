@@ -2,6 +2,15 @@ import { render } from "@testing-library/react-native";
 import { LanguagePicker } from "./LanguagePicker";
 import { DUMMYIMG } from "@assets";
 
+jest.mock("react-i18next", () => ({
+  useTranslation: () => ({
+    t: (key: unknown) => key,
+    i18n: {
+      changeLanguage: jest.fn(),
+    },
+  }),
+}));
+
 describe("Language Picker component", () => {
   it("should render", () => {
     render(<LanguagePicker />);
