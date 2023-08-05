@@ -1,13 +1,9 @@
-import { useCallback } from "react";
-import { Linking } from "react-native";
-
-import { TouchableOpacity } from "react-native-gesture-handler";
-
+import { DUMMYIMG } from "@assets";
 import { Box } from "@theme";
 import { IconsProps } from "@types";
 
 import { ReImage } from "../image/Image";
-import { DUMMYIMG } from "@assets";
+import { Link } from "../link/Link";
 
 export const Icons = ({
   link = "https://github.com/baptistemcn",
@@ -19,15 +15,11 @@ export const Icons = ({
   },
   testID = "icons",
 }: IconsProps) => {
-  const handleClick = useCallback(async () => {
-    Linking.openURL(link);
-  }, [link]);
-
   return (
     <Box padding={"m"} testID={testID}>
-      <TouchableOpacity onPress={handleClick} aria-label={name} testID="link">
+      <Link link={link} ariaLabel={name} testID="link">
         <ReImage source={source} styles={styles} testID="icon" />
-      </TouchableOpacity>
+      </Link>
     </Box>
   );
 };
