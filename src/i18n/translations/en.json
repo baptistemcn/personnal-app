@@ -21,6 +21,14 @@
     },
     "projects": {
       "title": "Projects"
+    },
+    "alert": {
+      "button": {
+        "close": "Close"
+      },
+      "error": {
+        "title": "Error!"
+      }
     }
   }
 }
