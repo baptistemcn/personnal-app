@@ -1,5 +1,7 @@
-import { render } from "@testing-library/react-native";
+import { render, waitFor } from "@testing-library/react-native";
 import { About } from "./About";
+
+import * as api from "../../api/about";
 
 jest.mock("@shopify/restyle", () => {
   const RealModule = jest.requireActual("@shopify/restyle");
@@ -26,6 +28,22 @@ const mockProps = {
 };
 
 describe("About Screen", () => {
+  const mockExperience = [
+    {
+      id: 1,
+      name: "Lorem Ipsum name 1",
+      duration: "NaN NaN 1",
+      presentation: "Lorem Ipsum presentation 1",
+      technology: [{ name: "Lorem Ipsum tech 1" }],
+    },
+    {
+      id: 2,
+      name: "Lorem Ipsum name 2",
+      duration: "NaN NaN 2",
+      presentation: "Lorem Ipsum presentation 2",
+      technology: [{ name: "Lorem Ipsum tech 2" }],
+    },
+  ];
   it("should render", () => {
     render(<About />);
   });
@@ -63,5 +81,48 @@ describe("About Screen", () => {
     expect(subtitleElement).toBeOnTheScreen();
 
     expect(subtitleElement.props.children).toEqual(mockProps.subtitle);
+  });
+
+  it("should render Experience component with data", async () => {
+    jest.spyOn(api, "getAbout").mockResolvedValue(mockExperience);
+
+    const { getByTestId, getByText } = render(<About />);
+
+    const component = getByTestId("experience");
+    const spinner = getByTestId("spinner");
+
+    expect(component).toBeTruthy();
+    expect(component).toBeOnTheScreen();
+
+    expect(spinner).toBeTruthy();
+    expect(spinner).toBeOnTheScreen();
+
+    await waitFor(() => {
+      expect(spinner).not.toBeOnTheScreen();
+    });
+
+    expect(getByText("Lorem Ipsum name 1")).toBeOnTheScreen();
+    expect(getByText("Lorem Ipsum name 2")).toBeOnTheScreen();
+  });
+
+  it("should render experience with error if no api response", async () => {
+    jest
+      .spyOn(api, "getAbout")
+      .mockRejectedValue(new Error("Failed to fetch data"));
+
+    const { getByTestId } = render(<About />);
+
+    const component = getByTestId("experience");
+    const spinner = getByTestId("spinner");
+
+    expect(component).toBeTruthy();
+    expect(component).toBeOnTheScreen();
+
+    expect(spinner).toBeTruthy();
+    expect(spinner).toBeOnTheScreen();
+
+    await waitFor(() => {
+      expect(spinner).toBeOnTheScreen();
+    });
   });
 });

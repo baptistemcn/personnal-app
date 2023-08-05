@@ -1,16 +1,34 @@
+import { useEffect, useState } from "react";
+import { ScrollView } from "react-native";
 import { useTranslation } from "react-i18next";
 
-import { Experience, Wrapper } from "@components";
+import { getAbout } from "@api";
+import { Experience, ReAlert, Spinner, Wrapper } from "@components";
 import { Box, Text } from "@theme";
-import { ScrollView } from "react-native";
-import { experiences } from "@assets";
+import { ExperienceItem } from "@types";
 
 export const About = () => {
+  const [about, setAbout] = useState<Array<ExperienceItem>>();
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
+  const [displayError, setDisplayError] = useState<string>("");
+
   const { i18n, t } = useTranslation();
 
   const lang = i18n.language;
 
-  const EXPERIENCES = experiences(lang);
+  useEffect(() => {
+    getAbout(lang)
+      .then((data) => {
+        setAbout(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setDisplayError(error);
+        setError(true);
+        setLoading(true);
+      });
+  }, [lang]);
 
   return (
     <ScrollView>
@@ -24,8 +42,11 @@ export const About = () => {
         <Text variant={"title3"} padding={"l"} testID="title2">
           {t("about.title2")}
         </Text>
-        <Box>
-          <Experience experiences={EXPERIENCES} />
+        <Box testID="experience">
+          {loading ? <Spinner /> : <Experience experiences={about} />}
+          {error && (
+            <ReAlert message={displayError} title={t("alert.error.title")} />
+          )}
         </Box>
       </Wrapper>
     </ScrollView>
