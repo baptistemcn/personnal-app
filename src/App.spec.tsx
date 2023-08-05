@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react-native";
+import { render, waitFor } from "@testing-library/react-native";
 
 import { App } from "./App";
 
@@ -22,6 +22,8 @@ jest.mock("react-i18next", () => ({
 
 describe("App", () => {
   it("should render", () => {
-    render(<App />);
+    waitFor(async () => {
+      render(<App />);
+    });
   });
 });
