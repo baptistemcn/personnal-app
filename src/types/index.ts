@@ -12,7 +12,7 @@ export type { IconsProps } from "./icons.interface";
 export type { ImageProps } from "./image.interface";
 export type { LineProps } from "./line.interface";
 export type { LinkProps } from "./link.interface";
-export type { ProjectProps } from "./project.interface";
+export type { ProjectItems, ProjectProps } from "./project.interface";
 export type { SpinnerProps } from "./spinner.interface";
 export type { TechnologyProps } from "./technology.interface";
 export type { WrapperProps } from "./wrapper.interface";

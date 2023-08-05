@@ -2,7 +2,7 @@ export interface ProjectProps {
   project?: Array<ProjectItems>;
 }
 
-interface ProjectItems {
+export interface ProjectItems {
   title?: string;
   description?: string;
   host?: HostItem;
