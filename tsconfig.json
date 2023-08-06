@@ -8,6 +8,7 @@
       "@api": ["src/api/index"],
       "@assets": ["src/assets/index"],
       "@components": ["src/components/index"],
+      "@functions": ["src/functions/index"],
       "@i18n": ["src/i18n/index"],
       "@routes": ["src/routes"],
       "@screens": ["src/screens/index"],
