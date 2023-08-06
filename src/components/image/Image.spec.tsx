@@ -14,6 +14,7 @@ const mockStyles = StyleSheet.create({
 
 describe("ReImage Component", () => {
   const mockImg = {
+    base64: "img-base64",
     source: ME,
     styles: mockStyles.img,
     testID: "test",
@@ -68,5 +69,27 @@ describe("ReImage Component", () => {
     expect(imgElement).toBeOnTheScreen();
 
     expect(imgElement._fiber.stateNode.props.style).toBe(mockImg.styles);
+  });
+
+  it("should render a default base64 img", () => {
+    const { getByTestId } = render(<ReImage />);
+
+    const imgElement = getByTestId("img");
+
+    expect(imgElement).toBeTruthy();
+    expect(imgElement).toBeOnTheScreen();
+
+    expect(imgElement.props.base64).toBeUndefined();
+  });
+
+  it("should render a base64 img with defined source", () => {
+    const { getByTestId } = render(<ReImage {...mockImg} />);
+
+    const imgElement = getByTestId("test");
+
+    expect(imgElement).toBeTruthy();
+    expect(imgElement).toBeOnTheScreen();
+
+    expect(imgElement.props.src).toEqual(mockImg.base64);
   });
 });
