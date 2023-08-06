@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react-native";
 import { Certificate } from "./Certificate";
-import { DUMMYIMG, ME } from "@assets";
+import { BASE64 } from "@assets";
 
 jest.mock("@shopify/restyle", () => {
   const RealModule = jest.requireActual("@shopify/restyle");
@@ -25,7 +25,7 @@ const mockProps = [
     inProgress: true,
     link: "https://google.com/",
     name: "Google",
-    icons: [{ source: ME }],
+    icons: [{ source: "img-base64" }],
     testID: "google",
   },
 ];
@@ -127,7 +127,7 @@ describe("Certicate component", () => {
     expect(nameElement.props.children).toBe(mockProps[0].name);
   });
 
-  it("should render icons with default props", () => {
+  it("should render base64 icons with default props", () => {
     const { getByTestId } = render(<Certificate />);
 
     const iconsElement = getByTestId("icons");
@@ -137,12 +137,12 @@ describe("Certicate component", () => {
 
     expect(iconsElement.props.children.length).toEqual(3);
 
-    iconsElement.props.children.map((icon: { props: { source: string } }) =>
-      expect(icon.props.source).toEqual(DUMMYIMG),
+    iconsElement.props.children.map((icon: { props: { base64: string } }) =>
+      expect(icon.props.base64).toEqual(BASE64),
     );
   });
 
-  it("should render icons with defined props", () => {
+  it("should render base64 icons with defined props", () => {
     const { getByTestId } = render(<Certificate certificate={mockProps} />);
 
     const iconsElement = getByTestId("icons");
@@ -152,8 +152,8 @@ describe("Certicate component", () => {
 
     expect(iconsElement.props.children.length).toEqual(1);
 
-    iconsElement.props.children.map((icon: { props: { source: string } }) =>
-      expect(icon.props.source).toEqual(mockProps[0].icons[0].source),
+    iconsElement.props.children.map((icon: { props: { base64: string } }) =>
+      expect(icon.props.base64).toEqual(mockProps[0].icons[0].source),
     );
   });
 });

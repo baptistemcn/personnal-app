@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { DUMMYIMG } from "@assets";
+import { BASE64 } from "@assets";
 import { Box, Text } from "@theme";
 import { CertificateProps } from "@types";
 
@@ -14,7 +14,7 @@ export const Certificate = ({
       inProgress: true,
       link: "https://lorem.ipsum",
       name: "Lorem Ipsum",
-      icons: [{ source: DUMMYIMG }, { source: DUMMYIMG }, { source: DUMMYIMG }],
+      icons: [{ source: BASE64 }, { source: BASE64 }, { source: BASE64 }],
       testID: "certificate",
     },
   ],
@@ -49,7 +49,8 @@ export const Certificate = ({
             {cert.icons?.map((icon, index) => (
               <ReImage
                 key={index}
-                source={icon.source}
+                base64={icon.source}
+                resizeMode="contain"
                 styles={{ height: 32, width: 32 }}
               />
             ))}

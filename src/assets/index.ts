@@ -1,4 +1,5 @@
 export {
+  BASE64,
   CERTIFICATES,
   DUMMYIMG,
   experiences,

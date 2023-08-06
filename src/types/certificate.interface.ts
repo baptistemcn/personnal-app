@@ -1,5 +1,3 @@
-import { ImageSourcePropType } from "react-native";
-
 export interface CertificateProps {
   certificate?: Array<CertificateItem>;
 }
@@ -13,5 +11,5 @@ export interface CertificateItem {
 }
 
 interface TechnologyItem {
-  source?: ImageSourcePropType;
+  source?: string;
 }
