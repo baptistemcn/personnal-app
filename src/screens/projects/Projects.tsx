@@ -1,10 +1,11 @@
+import { useEffect, useState } from "react";
 import { ScrollView } from "react-native";
 import { useTranslation } from "react-i18next";
 
-import { Project, ReAlert, Spinner, Wrapper } from "@components";
-import { Box, Text } from "@theme";
-import { useEffect, useState } from "react";
 import { getProjects } from "@api";
+import { Project, ReAlert, Spinner, Wrapper } from "@components";
+import { mapErrorFunction } from "@functions";
+import { Box, Text } from "@theme";
 import { ProjectItems } from "@types";
 
 export const Projects = () => {
@@ -37,7 +38,10 @@ export const Projects = () => {
         <Box marginVertical={"l"} testID="projects">
           {loading ? <Spinner /> : <Project project={projects} />}
           {error && (
-            <ReAlert message={displayError} title={t("alert.error.title")} />
+            <ReAlert
+              message={mapErrorFunction(t(displayError))}
+              title={t("alert.error.title")}
+            />
           )}
         </Box>
       </Wrapper>

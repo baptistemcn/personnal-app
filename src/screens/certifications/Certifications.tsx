@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { getCertifications } from "@api";
 import { Certificate, ReAlert, Spinner, Wrapper } from "@components";
+import { mapErrorFunction } from "@functions";
 import { Box, Text } from "@theme";
 import { CertificateItem } from "@types";
 
@@ -38,7 +39,10 @@ export const Certifications = () => {
         <Box marginVertical={"l"} testID="certificate">
           {loading ? <Spinner /> : <Certificate certificate={certifications} />}
           {error && (
-            <ReAlert message={displayError} title={t("alert.error.title")} />
+            <ReAlert
+              message={mapErrorFunction(t(displayError))}
+              title={t("alert.error.title")}
+            />
           )}
         </Box>
       </Wrapper>
