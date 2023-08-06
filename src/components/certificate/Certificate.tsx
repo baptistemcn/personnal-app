@@ -1,10 +1,12 @@
 import { useTranslation } from "react-i18next";
 
+import { DUMMYIMG } from "@assets";
 import { Box, Text } from "@theme";
 import { CertificateProps } from "@types";
 
 import { Card } from "../card/Card";
 import { Link } from "../link/Link";
+import { ReImage } from "../image/Image";
 
 export const Certificate = ({
   certificate = [
@@ -12,6 +14,7 @@ export const Certificate = ({
       inProgress: true,
       link: "https://lorem.ipsum",
       name: "Lorem Ipsum",
+      icons: [{ source: DUMMYIMG }, { source: DUMMYIMG }, { source: DUMMYIMG }],
       testID: "certificate",
     },
   ],
@@ -36,6 +39,20 @@ export const Certificate = ({
             {cert.inProgress && (
               <Text testID="inprogress">({t("certificate.label")})</Text>
             )}
+          </Box>
+          <Box
+            flexDirection={"row"}
+            alignSelf={"center"}
+            style={{ columnGap: 20 }}
+            testID="icons"
+          >
+            {cert.icons?.map((icon, index) => (
+              <ReImage
+                key={index}
+                source={icon.source}
+                styles={{ height: 32, width: 32 }}
+              />
+            ))}
           </Box>
           <Box marginVertical={"m"}>
             <Link link={cert.link}>

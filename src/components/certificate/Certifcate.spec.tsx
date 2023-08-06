@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react-native";
 import { Certificate } from "./Certificate";
+import { DUMMYIMG, ME } from "@assets";
 
 jest.mock("@shopify/restyle", () => {
   const RealModule = jest.requireActual("@shopify/restyle");
@@ -24,6 +25,7 @@ const mockProps = [
     inProgress: true,
     link: "https://google.com/",
     name: "Google",
+    icons: [{ source: ME }],
     testID: "google",
   },
 ];
@@ -123,5 +125,35 @@ describe("Certicate component", () => {
     expect(nameElement).toBeOnTheScreen();
 
     expect(nameElement.props.children).toBe(mockProps[0].name);
+  });
+
+  it("should render icons with default props", () => {
+    const { getByTestId } = render(<Certificate />);
+
+    const iconsElement = getByTestId("icons");
+
+    expect(iconsElement).toBeTruthy();
+    expect(iconsElement).toBeOnTheScreen();
+
+    expect(iconsElement.props.children.length).toEqual(3);
+
+    iconsElement.props.children.map((icon: { props: { source: string } }) =>
+      expect(icon.props.source).toEqual(DUMMYIMG),
+    );
+  });
+
+  it("should render icons with defined props", () => {
+    const { getByTestId } = render(<Certificate certificate={mockProps} />);
+
+    const iconsElement = getByTestId("icons");
+
+    expect(iconsElement).toBeTruthy();
+    expect(iconsElement).toBeOnTheScreen();
+
+    expect(iconsElement.props.children.length).toEqual(1);
+
+    iconsElement.props.children.map((icon: { props: { source: string } }) =>
+      expect(icon.props.source).toEqual(mockProps[0].icons[0].source),
+    );
   });
 });
