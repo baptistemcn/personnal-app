@@ -29,6 +29,13 @@
       "error": {
         "title": "Error!"
       }
+    },
+    "error": {
+      "unknown": "An error occurred. Please try again.",
+      "api": {
+        "notfound": "Failed to fetch data.",
+        "request": "Failed to fetch data at the moment. Please try again."
+      }
     }
   }
 }

@@ -29,6 +29,13 @@
       "error": {
         "title": "Erreur !"
       }
+    },
+    "error": {
+      "unknown": "Une erreur est surveunue. Veuillez réessayer",
+      "api": {
+        "notfound": "Impossible de récupérer les données.",
+        "request": "Impossible de récupérer les données pour le moment. Veuillez réessayer."
+      }
     }
   }
 }
