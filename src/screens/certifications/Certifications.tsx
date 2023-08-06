@@ -36,11 +36,7 @@ export const Certifications = () => {
           {t("certificate.title")}
         </Text>
         <Box marginVertical={"l"} testID="certificate">
-          {loading ? (
-            <Spinner />
-          ) : (
-            <Certificate certificate={certifications?.reverse()} />
-          )}
+          {loading ? <Spinner /> : <Certificate certificate={certifications} />}
           {error && (
             <ReAlert message={displayError} title={t("alert.error.title")} />
           )}
