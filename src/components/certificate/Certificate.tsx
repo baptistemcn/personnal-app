@@ -51,11 +51,11 @@ export const Certificate = ({
             testID="icons"
           >
             {cert.icons?.map((icon, index) => (
-              <Box key={index}>
+              <Box key={index} alignItems={"center"}>
                 <ReImage
                   base64={icon.source}
                   resizeMode="contain"
-                  styles={{ height: 32, width: 32, backgroundColor: "red" }}
+                  styles={{ height: 32, width: 32 }}
                 />
                 <Text variant={"italic"}>{icon.name}</Text>
               </Box>
