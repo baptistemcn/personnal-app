@@ -1,6 +1,7 @@
-import { render } from "@testing-library/react-native";
+import { fireEvent, render } from "@testing-library/react-native";
 import { Certificate } from "./Certificate";
 import { BASE64 } from "@assets";
+import { Linking } from "react-native";
 
 jest.mock("@shopify/restyle", () => {
   const RealModule = jest.requireActual("@shopify/restyle");
@@ -25,7 +26,9 @@ const mockProps = [
     inProgress: true,
     link: "https://google.com/",
     name: "Google",
-    icons: [{ name: "name", source: "img-base64" }],
+    icons: [
+      { link: "https://github.com/", name: "name", source: "img-base64" },
+    ],
     testID: "google",
   },
 ];
@@ -208,5 +211,33 @@ describe("Certicate component", () => {
     expect(
       nameElement.props.children[0].props.children[1].props.variant,
     ).toEqual("italic");
+  });
+
+  it("should render an onPress function to redirect to technology website with default props", () => {
+    const { getByTestId } = render(<Certificate />);
+
+    const buttonElement = getByTestId("icons");
+
+    expect(buttonElement).toBeTruthy();
+    expect(buttonElement).toBeOnTheScreen();
+
+    fireEvent.press(buttonElement.props.children[0]);
+
+    expect(Linking.openURL).toHaveBeenCalled();
+    expect(Linking.openURL).toHaveBeenCalledWith("https://lorem.ipsum/1");
+  });
+
+  it("should render an onPress function to redirect to technology website with defined props", () => {
+    const { getByTestId } = render(<Certificate certificate={mockProps} />);
+
+    const buttonElement = getByTestId("icons");
+
+    expect(buttonElement).toBeTruthy();
+    expect(buttonElement).toBeOnTheScreen();
+
+    fireEvent.press(buttonElement.props.children[0]);
+
+    expect(Linking.openURL).toHaveBeenCalled();
+    expect(Linking.openURL).toHaveBeenCalledWith(mockProps[0].icons[0].link);
   });
 });
