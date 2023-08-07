@@ -84,6 +84,11 @@ export const theme = createTheme({
       textAlign: "center",
       textDecorationLine: "underline",
     },
+    italic: {
+      fontSize: 14,
+      color: "icon",
+      fontStyle: "italic",
+    },
   },
 });
 
