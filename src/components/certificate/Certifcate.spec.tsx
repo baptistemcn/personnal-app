@@ -25,7 +25,7 @@ const mockProps = [
     inProgress: true,
     link: "https://google.com/",
     name: "Google",
-    icons: [{ source: "img-base64" }],
+    icons: [{ name: "name", source: "img-base64" }],
     testID: "google",
   },
 ];
@@ -137,8 +137,14 @@ describe("Certicate component", () => {
 
     expect(iconsElement.props.children.length).toEqual(3);
 
-    iconsElement.props.children.map((icon: { props: { base64: string } }) =>
-      expect(icon.props.base64).toEqual(BASE64),
+    iconsElement.props.children.map(
+      (icon: {
+        props: {
+          children: { props: { base64: string } }[];
+        };
+      }) => {
+        expect(icon.props.children[0].props.base64).toEqual(BASE64);
+      },
     );
   });
 
@@ -152,8 +158,55 @@ describe("Certicate component", () => {
 
     expect(iconsElement.props.children.length).toEqual(1);
 
-    iconsElement.props.children.map((icon: { props: { base64: string } }) =>
-      expect(icon.props.base64).toEqual(mockProps[0].icons[0].source),
+    iconsElement.props.children.map(
+      (icon: {
+        props: {
+          children: { props: { base64: string } }[];
+        };
+      }) => {
+        expect(icon.props.children[0].props.base64).toEqual(
+          mockProps[0].icons[0].source,
+        );
+      },
     );
+  });
+
+  it("should render base64 technology name with default props", () => {
+    const { getByTestId } = render(<Certificate />);
+
+    const nameElement = getByTestId("icons");
+
+    expect(nameElement).toBeTruthy();
+    expect(nameElement).toBeOnTheScreen();
+
+    expect(
+      nameElement.props.children[0].props.children[1].props.children,
+    ).toEqual("Lorem");
+  });
+
+  it("should render base64 technology name with defined props", () => {
+    const { getByTestId } = render(<Certificate certificate={mockProps} />);
+
+    const nameElement = getByTestId("icons");
+
+    expect(nameElement).toBeTruthy();
+    expect(nameElement).toBeOnTheScreen();
+
+    expect(
+      nameElement.props.children[0].props.children[1].props.children,
+    ).toEqual(mockProps[0].icons[0].name);
+  });
+
+  it("should render base64 technology text variant", () => {
+    const { getByTestId } = render(<Certificate />);
+
+    const nameElement = getByTestId("icons");
+
+    expect(nameElement).toBeTruthy();
+    expect(nameElement).toBeOnTheScreen();
+
+    expect(
+      nameElement.props.children[0].props.children[1].props.variant,
+    ).toEqual("italic");
   });
 });

@@ -14,7 +14,11 @@ export const Certificate = ({
       inProgress: true,
       link: "https://lorem.ipsum",
       name: "Lorem Ipsum",
-      icons: [{ source: BASE64 }, { source: BASE64 }, { source: BASE64 }],
+      icons: [
+        { name: "Lorem", source: BASE64 },
+        { name: "Lorem", source: BASE64 },
+        { name: "Lorem", source: BASE64 },
+      ],
       testID: "certificate",
     },
   ],
@@ -47,12 +51,14 @@ export const Certificate = ({
             testID="icons"
           >
             {cert.icons?.map((icon, index) => (
-              <ReImage
-                key={index}
-                base64={icon.source}
-                resizeMode="contain"
-                styles={{ height: 32, width: 32 }}
-              />
+              <Box key={index}>
+                <ReImage
+                  base64={icon.source}
+                  resizeMode="contain"
+                  styles={{ height: 32, width: 32, backgroundColor: "red" }}
+                />
+                <Text variant={"italic"}>{icon.name}</Text>
+              </Box>
             ))}
           </Box>
           <Box marginVertical={"m"}>
