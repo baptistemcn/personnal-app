@@ -6,12 +6,14 @@ export const ReButton = ({
   ariaLabel = "default button",
   children,
   onPress,
+  styles,
   testID = "button",
 }: ButtonProps) => {
   return (
     <TouchableOpacity
       accessibilityLabel={ariaLabel}
       onPress={onPress}
+      style={styles}
       testID={testID}
     >
       {children}

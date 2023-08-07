@@ -7,6 +7,9 @@ const mockReButton = {
   onPress: () => {
     return "s-crew";
   },
+  styles: {
+    backgroundColor: "red",
+  },
   testID: "mock-testid",
 };
 
@@ -85,5 +88,33 @@ describe("Button component", () => {
 
     expect(mockOnPress).toHaveBeenCalled();
     expect(mockOnPress).toHaveBeenCalledTimes(1);
+  });
+
+  it("should render a style props with default props", () => {
+    const { getByTestId } = render(
+      <ReButton>{mockReButton.children}</ReButton>,
+    );
+
+    const buttonElement = getByTestId("button");
+
+    expect(buttonElement).toBeTruthy();
+    expect(buttonElement).toBeOnTheScreen();
+
+    expect(buttonElement.props.children.props.style[0]).toEqual({});
+  });
+
+  it("should render a style props with defined props", () => {
+    const { getByTestId } = render(
+      <ReButton {...mockReButton}>{mockReButton.children}</ReButton>,
+    );
+
+    const buttonElement = getByTestId(mockReButton.testID);
+
+    expect(buttonElement).toBeTruthy();
+    expect(buttonElement).toBeOnTheScreen();
+
+    expect(buttonElement.props.children.props.style[0]).toEqual(
+      mockReButton.styles,
+    );
   });
 });
