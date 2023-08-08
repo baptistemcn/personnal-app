@@ -1,7 +1,7 @@
 import { render, waitFor } from "@testing-library/react-native";
 import { Certifications } from "./Certifications";
 
-import * as api from "../../api/certifications";
+import * as api from "../../services/api/certifications";
 
 jest.mock("@shopify/restyle", () => {
   const RealModule = jest.requireActual("@shopify/restyle");

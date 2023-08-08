@@ -1,35 +1,16 @@
-import { useEffect, useState } from "react";
 import { ScrollView } from "react-native";
 import { useTranslation } from "react-i18next";
 
-import { getAbout } from "@api";
 import { Experience, ReAlert, Spinner, Wrapper } from "@components";
 import { mapError } from "@functions";
 import { Box, Text } from "@theme";
-import { ExperienceItem } from "@types";
+import { useAbout } from "@hooks";
 
 export const About = () => {
-  const [about, setAbout] = useState<Array<ExperienceItem>>();
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
-  const [displayError, setDisplayError] = useState<string>("");
-
   const { i18n, t } = useTranslation();
-
   const lang = i18n.language;
 
-  useEffect(() => {
-    getAbout(lang)
-      .then((data) => {
-        setAbout(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setDisplayError(error);
-        setError(true);
-        setLoading(true);
-      });
-  }, [lang]);
+  const { about, displayError, error, loading } = useAbout(lang);
 
   return (
     <ScrollView>
