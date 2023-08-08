@@ -36,7 +36,9 @@ export const Presentation = ({
 
       <Box flexDirection={"row"}>
         {icons?.map((icon, index) => (
-          <Icons {...icon} key={index} />
+          <Box key={index} padding={"m"}>
+            <Icons {...icon} />
+          </Box>
         ))}
       </Box>
     </Wrapper>

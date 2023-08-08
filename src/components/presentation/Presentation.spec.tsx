@@ -154,12 +154,12 @@ describe("Presentation Component", () => {
     expect(iconsElement).toBeTruthy();
     expect(iconsElement).toBeOnTheScreen();
 
-    expect(iconsElement.props.children.props.children.props.source).toEqual(
+    expect(iconsElement.props.children.props.children[0].props.source).toEqual(
       DUMMYIMG,
     );
   });
 
-  it("should render icons", () => {
+  it("should render icons with defined props", () => {
     const { getByTestId } = render(
       <Presentation
         icons={ICONS}
@@ -174,7 +174,7 @@ describe("Presentation Component", () => {
     expect(iconsElement).toBeTruthy();
     expect(iconsElement).toBeOnTheScreen();
 
-    expect(iconsElement.props.children.props.children.props.source).toEqual(
+    expect(iconsElement.props.children.props.children[0].props.source).toEqual(
       IMG.source,
     );
   });
