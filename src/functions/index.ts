@@ -1,2 +1,2 @@
-export { mapErrorFunction } from "./errorMap";
+export { mapError } from "./errorMap";
 export { openLink } from "./link";

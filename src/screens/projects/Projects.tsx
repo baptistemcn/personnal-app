@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { getProjects } from "@api";
 import { Project, ReAlert, Spinner, Wrapper } from "@components";
-import { mapErrorFunction } from "@functions";
+import { mapError } from "@functions";
 import { Box, Text } from "@theme";
 import { ProjectItems } from "@types";
 
@@ -39,7 +39,7 @@ export const Projects = () => {
           {loading ? <Spinner /> : <Project project={projects} />}
           {error && (
             <ReAlert
-              message={mapErrorFunction(t(displayError))}
+              message={mapError(t(displayError))}
               title={t("alert.error.title")}
             />
           )}

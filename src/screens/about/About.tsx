@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { getAbout } from "@api";
 import { Experience, ReAlert, Spinner, Wrapper } from "@components";
-import { mapErrorFunction } from "@functions";
+import { mapError } from "@functions";
 import { Box, Text } from "@theme";
 import { ExperienceItem } from "@types";
 
@@ -47,7 +47,7 @@ export const About = () => {
           {loading ? <Spinner /> : <Experience experiences={about} />}
           {error && (
             <ReAlert
-              message={mapErrorFunction(t(displayError))}
+              message={mapError(t(displayError))}
               title={t("alert.error.title")}
             />
           )}
