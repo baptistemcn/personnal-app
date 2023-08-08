@@ -44,6 +44,7 @@
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
     "@testing-library/jest-native": "^5.4.2",
+    "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/react-native": "^12.1.2",
     "@types/jest": "^29.5.2",
     "@types/react": "~18.2.15",
