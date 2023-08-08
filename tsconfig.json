@@ -5,12 +5,13 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@api": ["src/api/index"],
       "@assets": ["src/assets/index"],
       "@components": ["src/components/index"],
       "@functions": ["src/functions/index"],
+      "@hooks": ["src/hooks/index"],
       "@i18n": ["src/i18n/index"],
       "@routes": ["src/routes"],
+      "@services": ["src/services/index"],
       "@screens": ["src/screens/index"],
       "@theme": ["src/theme/index"],
       "@types": ["src/types/index"]
