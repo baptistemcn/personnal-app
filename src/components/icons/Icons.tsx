@@ -1,11 +1,13 @@
 import { DUMMYIMG } from "@assets";
-import { Box } from "@theme";
+import { Text } from "@theme";
 import { IconsProps } from "@types";
 
 import { ReImage } from "../image/Image";
-import { Link } from "../link/Link";
+import { ReButton } from "../button/Button";
+import { openLink } from "@functions";
 
 export const Icons = ({
+  base64,
   link = "https://github.com/baptistemcn",
   name = "Lorem Ipsum",
   source = DUMMYIMG,
@@ -13,13 +15,25 @@ export const Icons = ({
     height: 32,
     width: 32,
   },
-  testID = "icons",
+  testID = "icon",
 }: IconsProps) => {
   return (
-    <Box padding={"m"} testID={testID}>
-      <Link link={link} ariaLabel={name} testID="link">
-        <ReImage source={source} styles={styles} testID="icon" />
-      </Link>
-    </Box>
+    <ReButton
+      onPress={() => openLink(link)}
+      styles={{ alignItems: "center" }}
+      {...{ testID }}
+    >
+      <ReImage
+        source={source}
+        base64={base64}
+        styles={styles}
+        resizeMode="contain"
+      />
+      {name && (
+        <Text variant={"italic"} paddingVertical={"xs"}>
+          {name}
+        </Text>
+      )}
+    </ReButton>
   );
 };

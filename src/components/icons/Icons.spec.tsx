@@ -41,8 +41,12 @@ describe("Icons component", () => {
     expect(iconElement).toBeTruthy();
     expect(iconElement).toBeOnTheScreen();
 
-    expect(iconElement.props.source).toBeDefined();
-    expect(iconElement.props.source).toEqual(DUMMYIMG);
+    expect(
+      iconElement.props.children.props.children[0].props.source,
+    ).toBeDefined();
+    expect(iconElement.props.children.props.children[0].props.source).toEqual(
+      DUMMYIMG,
+    );
   });
 
   it("should render an icon with passing props", () => {
@@ -53,8 +57,12 @@ describe("Icons component", () => {
     expect(iconElement).toBeTruthy();
     expect(iconElement).toBeOnTheScreen();
 
-    expect(iconElement.props.source).toBeDefined();
-    expect(iconElement.props.source).toEqual(mockIcons.source);
+    expect(
+      iconElement.props.children.props.children[0].props.source,
+    ).toBeDefined();
+    expect(iconElement.props.children.props.children[0].props.source).toEqual(
+      mockIcons.source,
+    );
   });
 
   it("should render with a default link props and redirect on click", () => {
@@ -95,7 +103,9 @@ describe("Icons component", () => {
     expect(iconElement).toBeTruthy();
     expect(iconElement).toBeOnTheScreen();
 
-    expect(iconElement.props.source).toEqual(DUMMYIMG);
+    expect(iconElement.props.children.props.children[0].props.source).toEqual(
+      DUMMYIMG,
+    );
   });
 
   it("should render an img in the icons when passing props", () => {
@@ -106,7 +116,9 @@ describe("Icons component", () => {
     expect(iconElement).toBeTruthy();
     expect(iconElement).toBeOnTheScreen();
 
-    expect(iconElement.props.source).toEqual(mockIcons.source);
+    expect(iconElement.props.children.props.children[0].props.source).toEqual(
+      mockIcons.source,
+    );
   });
 
   it("should render a dummy img with default props", () => {
@@ -117,7 +129,7 @@ describe("Icons component", () => {
     expect(iconElement).toBeTruthy();
     expect(iconElement).toBeOnTheScreen();
 
-    expect(iconElement.props.style).toEqual({
+    expect(iconElement.props.children.props.children[0].props.styles).toEqual({
       height: 32,
       width: 32,
     });
@@ -131,7 +143,7 @@ describe("Icons component", () => {
     expect(iconElement).toBeTruthy();
     expect(iconElement).toBeOnTheScreen();
 
-    expect(iconElement.props.style).toEqual({
+    expect(iconElement.props.children.props.children[0].props.styles).toEqual({
       width: 64,
       height: 64,
     });
