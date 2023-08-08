@@ -13,5 +13,5 @@ export interface CertificateItem {
 interface TechnologyItem {
   link?: string;
   name?: string;
-  source?: string;
+  base64?: string;
 }

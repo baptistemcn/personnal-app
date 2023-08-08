@@ -25,13 +25,13 @@ export const ICONS = [
   {
     source: GITHUB,
     link: "https://github.com/baptistemcn",
-    name: "Github",
+    name: "",
     styles: styles?.icons,
   },
   {
     source: LINKEDIN,
     link: "https://www.linkedin.com/in/baptiste-marcon/",
-    name: "Linkedin",
+    name: "",
     styles: styles?.icons,
   },
 ];

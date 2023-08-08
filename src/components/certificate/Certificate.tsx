@@ -5,10 +5,8 @@ import { Box, Text } from "@theme";
 import { CertificateProps } from "@types";
 
 import { Card } from "../card/Card";
+import { Icons } from "../icons/Icons";
 import { Link } from "../link/Link";
-import { ReImage } from "../image/Image";
-import { ReButton } from "../button/Button";
-import { openLink } from "@functions";
 
 export const Certificate = ({
   certificate = [
@@ -17,9 +15,9 @@ export const Certificate = ({
       link: "https://lorem.ipsum",
       name: "Lorem Ipsum",
       icons: [
-        { link: "https://lorem.ipsum/1", name: "Lorem", source: BASE64 },
-        { link: "https://lorem.ipsum/1", name: "Lorem", source: BASE64 },
-        { link: "https://lorem.ipsum/1", name: "Lorem", source: BASE64 },
+        { link: "https://lorem.ipsum/1", name: "Lorem", base64: BASE64 },
+        { link: "https://lorem.ipsum/1", name: "Lorem", base64: BASE64 },
+        { link: "https://lorem.ipsum/1", name: "Lorem", base64: BASE64 },
       ],
       testID: "certificate",
     },
@@ -53,18 +51,7 @@ export const Certificate = ({
             testID="icons"
           >
             {cert.icons?.map((icon, index) => (
-              <ReButton
-                key={index}
-                onPress={() => openLink(icon.link)}
-                styles={{ alignItems: "center" }}
-              >
-                <ReImage
-                  base64={icon.source}
-                  resizeMode="contain"
-                  styles={{ height: 32, width: 32 }}
-                />
-                <Text variant={"italic"}>{icon.name}</Text>
-              </ReButton>
+              <Icons {...icon} key={index} />
             ))}
           </Box>
           <Box marginVertical={"m"}>
