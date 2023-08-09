@@ -1,33 +1,15 @@
-import { useEffect, useState } from "react";
 import { ScrollView } from "react-native";
 import { useTranslation } from "react-i18next";
 
 import { Project, ReAlert, Spinner, Wrapper } from "@components";
 import { mapError } from "@functions";
 import { Box, Text } from "@theme";
-import { getProjects } from "@services";
-import { ProjectItems } from "@types";
+import { useProjects } from "@hooks";
 
 export const Projects = () => {
-  const [projects, setProjects] = useState<Array<ProjectItems>>();
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
-  const [displayError, setDisplayError] = useState<string>("");
-
   const { t } = useTranslation();
 
-  useEffect(() => {
-    getProjects()
-      .then((data) => {
-        setProjects(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setDisplayError(error);
-        setError(true);
-        setLoading(true);
-      });
-  }, []);
+  const { displayError, error, loading, projects } = useProjects();
 
   return (
     <ScrollView>
