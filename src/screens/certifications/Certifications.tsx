@@ -1,34 +1,15 @@
-import { useEffect, useState } from "react";
 import { ScrollView } from "react-native";
 import { useTranslation } from "react-i18next";
 
 import { Certificate, ReAlert, Spinner, Wrapper } from "@components";
 import { mapError } from "@functions";
 import { Box, Text } from "@theme";
-import { getCertifications } from "@services";
-import { CertificateItem } from "@types";
+import { useCertifications } from "@hooks";
 
 export const Certifications = () => {
-  const [certifications, setCertifications] =
-    useState<Array<CertificateItem>>();
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
-  const [displayError, setDisplayError] = useState<string>("");
-
   const { t } = useTranslation();
 
-  useEffect(() => {
-    getCertifications()
-      .then((data) => {
-        setCertifications(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setDisplayError(error);
-        setError(true);
-        setLoading(true);
-      });
-  }, []);
+  const { certifications, displayError, error, loading } = useCertifications();
 
   return (
     <ScrollView>
