@@ -26,9 +26,15 @@ dependencies:
   cross-fetch:
     specifier: ^4.0.0
     version: 4.0.0
+  dotenv:
+    specifier: ^16.3.1
+    version: 16.3.1
   expo:
     specifier: ~49.0.4
     version: 49.0.4(@babel/core@7.20.2)
+  expo-constants:
+    specifier: ~14.4.2
+    version: 14.4.2(expo@49.0.4)
   expo-localization:
     specifier: ~14.3.0
     version: 14.3.0(expo@49.0.4)
@@ -4353,6 +4359,11 @@ packages:
 
   /dotenv@16.0.3:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /dotenv@16.3.1:
+    resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
     engines: {node: '>=12'}
     dev: false
 
