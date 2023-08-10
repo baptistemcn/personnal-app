@@ -6,6 +6,7 @@
     "baseUrl": ".",
     "paths": {
       "@assets": ["src/assets/index"],
+      "@constants": ["src/constants/index"],
       "@components": ["src/components/index"],
       "@functions": ["src/functions/index"],
       "@hooks": ["src/hooks/index"],
