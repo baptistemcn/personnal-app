@@ -1,9 +1,9 @@
 import { fetch } from "cross-fetch";
 
-const API_URL = "http://localhost:3000";
+import { Constants } from "@constants";
 
 export async function getCertifications() {
-  const response = await fetch(`${API_URL}/certifications`, {
+  const response = await fetch(`${Constants.API_URL}/certifications`, {
     method: "GET",
   });
   return await response.json();

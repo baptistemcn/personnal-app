@@ -1,9 +1,9 @@
 import { fetch } from "cross-fetch";
 
-const API_URL = "http://localhost:3000";
+import { Constants } from "@constants";
 
 export async function getAbout(lang: string) {
-  const response = await fetch(`${API_URL}/about?language=${lang}`, {
+  const response = await fetch(`${Constants.API_URL}/about?language=${lang}`, {
     method: "GET",
   });
   return await response.json();
