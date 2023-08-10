@@ -24,6 +24,12 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-localization"]
+    "plugins": ["expo-localization"],
+    "extra": {
+      "eas": {
+        "projectId": "33dfaf72-aa8f-47f4-98c9-1318ba575200"
+      }
+    },
+    "owner": "baptistemcn"
   }
 }
