@@ -28,6 +28,7 @@ export const theme = createTheme({
     blue: palette.blue,
   },
   spacing: {
+    null: spacing.null,
     xs: spacing.xs,
     s: spacing.s,
     m: spacing.m,
