@@ -18,6 +18,7 @@ module.exports = function (api) {
             "@services": "./src/services",
             "@theme": "./src/theme",
             "@types": "./src/types",
+            "@ui": "./src/ui",
           },
           extensions: [".ts", ".tsx"],
         },

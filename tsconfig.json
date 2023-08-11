@@ -15,7 +15,8 @@
       "@services": ["src/services/index"],
       "@screens": ["src/screens/index"],
       "@theme": ["src/theme/index"],
-      "@types": ["src/types/index"]
+      "@types": ["src/types/index"],
+      "@ui": ["src/ui/index"]
     }
   }
 }
