@@ -1,9 +1,7 @@
 import { DUMMYIMG } from "@assets";
 import { Box, Text } from "@theme";
 import { PresentationProps } from "@types";
-import { Icons, ReImage } from "@ui";
-
-import { Wrapper } from "../wrapper/Wrapper";
+import { Icons, ReImage, Wrapper } from "@ui";
 
 export const Presentation = ({
   icons = [
