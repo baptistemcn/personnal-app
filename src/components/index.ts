@@ -1,4 +1,3 @@
-export { ReButton } from "./button/Button";
 export { Card } from "./card/Card";
 export { Certificate } from "./certificate/Certificate";
 export { Experience } from "./experience/Experience";

@@ -3,8 +3,8 @@ import { Text } from "@theme";
 import { IconsProps } from "@types";
 
 import { ReImage } from "../image/Image";
-import { ReButton } from "../button/Button";
 import { openLink } from "@functions";
+import { ReButton } from "@ui";
 
 export const Icons = ({
   base64,
