@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import { Alert } from "react-native";
 
-import { AlertProps } from "@types";
 import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
+
+import { AlertProps } from "@types";
 
 export const ReAlert = ({
   message = "Message",

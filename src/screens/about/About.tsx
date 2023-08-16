@@ -1,10 +1,11 @@
 import { ScrollView } from "react-native";
 import { useTranslation } from "react-i18next";
 
-import { Experience, ReAlert, Spinner, Wrapper } from "@components";
+import { Experience, Spinner, Wrapper } from "@components";
 import { mapError } from "@functions";
 import { Box, Text } from "@theme";
 import { useAbout } from "@hooks";
+import { ReAlert } from "@ui";
 
 export const About = () => {
   const { i18n, t } = useTranslation();
