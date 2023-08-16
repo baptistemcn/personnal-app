@@ -1,6 +1,5 @@
 export { Certificate } from "./certificate/Certificate";
 export { Experience } from "./experience/Experience";
-export { Icons } from "./icons/Icons";
 export { ReImage } from "./image/Image";
 export { LanguagePicker } from "./language-picker/LanguagePicker";
 export { Line } from "./line/Line";

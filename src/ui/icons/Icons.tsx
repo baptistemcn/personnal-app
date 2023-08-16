@@ -2,7 +2,7 @@ import { DUMMYIMG } from "@assets";
 import { Text } from "@theme";
 import { IconsProps } from "@types";
 
-import { ReImage } from "../image/Image";
+import { ReImage } from "../../components/image/Image";
 import { openLink } from "@functions";
 import { ReButton } from "@ui";
 
