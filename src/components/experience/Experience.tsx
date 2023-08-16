@@ -1,8 +1,7 @@
 import { Box, Text, useTheme } from "@theme";
 import { ExperienceProps } from "@types";
-import { Card } from "@ui";
+import { Card, Line } from "@ui";
 
-import { Line } from "../line/Line";
 import { Technology } from "../technology/Technology";
 
 export const Experience = ({
