@@ -6,3 +6,4 @@ export { Icons } from "./icons/Icons";
 export { ReImage } from "./image/Image";
 export { Line } from "./line/Line";
 export { Link } from "./link/Link";
+export { Spinner } from "./spinner/Spinner";

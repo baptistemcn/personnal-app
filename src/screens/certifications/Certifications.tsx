@@ -1,11 +1,11 @@
 import { ScrollView } from "react-native";
 import { useTranslation } from "react-i18next";
 
-import { Certificate, Spinner, Wrapper } from "@components";
+import { Certificate, Wrapper } from "@components";
 import { mapError } from "@functions";
-import { Box, Text } from "@theme";
 import { useCertifications } from "@hooks";
-import { ReAlert } from "@ui";
+import { Box, Text } from "@theme";
+import { ReAlert, Spinner } from "@ui";
 
 export const Certifications = () => {
   const { t } = useTranslation();
