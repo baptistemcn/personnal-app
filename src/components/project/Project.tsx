@@ -1,7 +1,7 @@
 import { Box, Text, useTheme } from "@theme";
 import { ProjectProps } from "@types";
+import { Card } from "@ui";
 
-import { Card } from "../card/Card";
 import { Link } from "../link/Link";
 
 export const Project = ({

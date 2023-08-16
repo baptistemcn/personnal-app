@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import { BASE64 } from "@assets";
 import { Box, Text } from "@theme";
 import { CertificateProps } from "@types";
+import { Card } from "@ui";
 
-import { Card } from "../card/Card";
 import { Icons } from "../icons/Icons";
 import { Link } from "../link/Link";
 
