@@ -1,7 +1,7 @@
 import { Image } from "react-native";
 
-import { ImageProps } from "@types";
 import { DUMMYIMG } from "@assets";
+import { ImageProps } from "@types";
 
 export const ReImage = ({
   base64,

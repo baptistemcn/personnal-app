@@ -1,10 +1,10 @@
 import { DUMMYIMG } from "@assets";
+import { openLink } from "@functions";
 import { Text } from "@theme";
 import { IconsProps } from "@types";
 
-import { ReImage } from "../../components/image/Image";
-import { openLink } from "@functions";
-import { ReButton } from "@ui";
+import { ReButton } from "../button/Button";
+import { ReImage } from "../image/Image";
 
 export const Icons = ({
   base64,

@@ -2,9 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import { FRENCH_FLAG, US_FLAG } from "@assets";
 import { Box } from "@theme";
-import { ReButton } from "@ui";
-
-import { ReImage } from "../image/Image";
+import { ReButton, ReImage } from "@ui";
 
 export const LanguagePicker = () => {
   const { i18n } = useTranslation();

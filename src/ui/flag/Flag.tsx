@@ -1,7 +1,7 @@
 import { DUMMYIMG } from "@assets";
 import { FlagProps } from "@types";
 
-import { ReImage } from "../../components/image/Image";
+import { ReImage } from "../image/Image";
 
 export const Flag = ({
   nation = DUMMYIMG,
