@@ -3,9 +3,7 @@ import { useTranslation } from "react-i18next";
 import { BASE64 } from "@assets";
 import { Box, Text } from "@theme";
 import { CertificateProps } from "@types";
-import { Card, Icons } from "@ui";
-
-import { Link } from "../link/Link";
+import { Card, Icons, Link } from "@ui";
 
 export const Certificate = ({
   certificate = [
