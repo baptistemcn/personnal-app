@@ -1,8 +1,12 @@
-import { Box, Text, useTheme } from "@theme";
+import { Box, useTheme } from "@theme";
 import { ExperienceProps } from "@types";
 import { Card, Line } from "@ui";
 
 import { Technology } from "../technology/Technology";
+
+import { Durantion } from "./duration/Duration";
+import { Title } from "./title/Title";
+import { Presentation } from "./presentation/Presentation";
 
 export const Experience = ({
   experiences = [
@@ -20,20 +24,14 @@ export const Experience = ({
       {experiences?.map((exp, index) => (
         <Card key={index}>
           <Box>
-            <Text variant={"title3"} paddingVertical={"s"} testID="exp-title">
-              {exp.name}
-            </Text>
-            <Text variant={"date"} paddingVertical={"s"} testID="exp-date">
-              {exp.duration}
-            </Text>
+            <Experience.Title name={exp.name} />
+            <Experience.Duration duration={exp.duration} />
           </Box>
           {exp.presentation && (
             <>
               <Line color={theme.colors.blue} height={2} />
               <Box paddingVertical={"m"}>
-                <Text variant={"text"} textAlign={"left"} testID="exp-text">
-                  {exp.presentation}
-                </Text>
+                <Experience.Presentation text={exp.presentation} />
               </Box>
             </>
           )}
@@ -41,7 +39,7 @@ export const Experience = ({
             <>
               <Line />
               <Box paddingVertical={"m"}>
-                <Technology technology={exp.technologies} />
+                <Experience.Technology technology={exp.technologies} />
               </Box>
             </>
           )}
@@ -50,3 +48,8 @@ export const Experience = ({
     </>
   );
 };
+
+Experience.Title = Title;
+Experience.Duration = Durantion;
+Experience.Presentation = Presentation;
+Experience.Technology = Technology;
