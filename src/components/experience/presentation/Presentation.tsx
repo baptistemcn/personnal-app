@@ -1,4 +1,4 @@
-import { Box, Text } from "@theme";
+import { Text } from "@theme";
 
 interface ExperiencePresentationProps {
   text?: string;
@@ -7,9 +7,7 @@ interface ExperiencePresentationProps {
 export const Presentation = ({
   text = "Lorem Ipsum",
 }: ExperiencePresentationProps) => (
-  <Box paddingVertical={"m"}>
-    <Text variant={"text"} textAlign={"left"} testID="exp-text">
-      {text}
-    </Text>
-  </Box>
+  <Text variant={"text"} textAlign={"left"} testID="exp-text">
+    {text}
+  </Text>
 );
