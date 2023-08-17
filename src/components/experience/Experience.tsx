@@ -1,8 +1,6 @@
 import { Box, useTheme } from "@theme";
 import { ExperienceProps } from "@types";
-import { Card, Line } from "@ui";
-
-import { Technology } from "../technology/Technology";
+import { Card, Line, Technology } from "@ui";
 
 import { Durantion } from "./duration/Duration";
 import { Title } from "./title/Title";
