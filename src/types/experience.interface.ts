@@ -10,3 +10,7 @@ export interface ExperienceItem {
   duration: string;
   technologies?: Array<TechnologyItem>;
 }
+
+export interface ExperienceDurationProps {
+  duration?: string;
+}

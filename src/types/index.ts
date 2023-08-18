@@ -5,7 +5,11 @@ export type {
   CertificateItem,
   CertificateProps,
 } from "./certificate.interface";
-export type { ExperienceItem, ExperienceProps } from "./experience.interface";
+export type {
+  ExperienceItem,
+  ExperienceProps,
+  ExperienceDurationProps,
+} from "./experience.interface";
 export type { FlagProps } from "./flag.interface";
 export type { PresentationProps } from "./presentation.interface";
 export type { IconsProps } from "./icons.interface";
