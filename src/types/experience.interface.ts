@@ -14,3 +14,7 @@ export interface ExperienceItem {
 export interface ExperienceDurationProps {
   duration?: string;
 }
+
+export interface ExperiencePresentationProps {
+  text?: string;
+}

@@ -1,8 +1,5 @@
 import { Text } from "@theme";
-
-interface ExperiencePresentationProps {
-  text?: string;
-}
+import { ExperiencePresentationProps } from "@types";
 
 export const Presentation = ({
   text = "Lorem Ipsum",
