@@ -1,4 +1,6 @@
+import { ColorValue } from "react-native";
+
 export interface SpinnerProps {
-  color?: string;
+  color?: ColorValue | undefined;
   size?: number | "small" | "large" | undefined;
 }

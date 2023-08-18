@@ -19,7 +19,7 @@ describe("Spinner component", () => {
     expect(spinner).toBeTruthy();
     expect(spinner).toBeOnTheScreen();
 
-    expect(spinner.props.color).toEqual("000000");
+    expect(spinner.props.color).toEqual("grey");
   });
 
   it("should render a spinner with a defined color", () => {
