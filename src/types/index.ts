@@ -10,6 +10,7 @@ export type {
   ExperienceProps,
   ExperienceDurationProps,
   ExperiencePresentationProps,
+  ExperienceTitleProps,
 } from "./experience.interface";
 export type { FlagProps } from "./flag.interface";
 export type { PresentationProps } from "./presentation.interface";

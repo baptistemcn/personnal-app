@@ -1,8 +1,5 @@
 import { Text } from "@theme";
-
-interface ExperienceTitleProps {
-  name?: string;
-}
+import { ExperienceTitleProps } from "@types";
 
 export const Title = ({ name = "Lorem Ipsum" }: ExperienceTitleProps) => (
   <Text variant={"title3"} paddingVertical={"s"} testID="exp-title">
