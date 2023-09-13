@@ -1,4 +1,10 @@
-export class Constants {
-  static readonly API_URL: string = "https://baptiste-marcon-api.adaptable.app";
-  // static readonly API_URL: string = "http://localhost:3000";
+class Constants {
+  private readonly API_URL: string =
+    "https://baptiste-marcon-api.adaptable.app";
+
+  get apiURL(): string {
+    return this.API_URL;
+  }
 }
+
+export const CONSTANTS = new Constants();
