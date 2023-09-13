@@ -7,15 +7,17 @@ import { Box } from "@theme";
 export const Welcome = () => {
   const { t } = useTranslation();
 
+  const PRESENTATION = {
+    icons: ICONS,
+    img: IMG,
+    title: t("card.title"),
+    text: t("card.presentation"),
+    testID: "card",
+  };
+
   return (
     <Box flex={1} testID="welcome">
-      <Presentation
-        icons={ICONS}
-        img={IMG}
-        title={t("card.title")}
-        text={t("card.presentation")}
-        testID="card"
-      />
+      <Presentation {...PRESENTATION} />
     </Box>
   );
 };
