@@ -1,11 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useLoggerService } from "./index";
 
+global.console = {
+  ...console,
+  log: jest.fn(),
+  debug: jest.fn(),
+  warn: jest.fn(),
+  error: jest.fn(),
+};
+
 describe("LoggerService", () => {
   let logger: any;
 
   beforeEach(() => {
     logger = useLoggerService();
+    jest.spyOn(global.console, "log").mockImplementation(jest.fn());
+    jest.spyOn(global.console, "debug").mockImplementation(jest.fn());
+    jest.spyOn(global.console, "warn").mockImplementation(jest.fn());
+    jest.spyOn(global.console, "error").mockImplementation(jest.fn());
   });
 
   it("should log info message", () => {
