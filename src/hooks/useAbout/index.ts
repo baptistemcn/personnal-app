@@ -10,6 +10,8 @@ export const useAbout = (lang: string) => {
   const [displayError, setDisplayError] = useState<string>("");
 
   useEffect(() => {
+    const controller = new AbortController();
+
     const fetchItems = async () => {
       await getAbout(lang)
         .then((data) => {
@@ -23,6 +25,9 @@ export const useAbout = (lang: string) => {
         });
     };
     fetchItems();
+    return () => {
+      controller.abort();
+    };
   }, [lang]);
 
   return { about, loading, error, displayError };

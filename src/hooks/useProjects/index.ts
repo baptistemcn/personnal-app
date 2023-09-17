@@ -10,6 +10,8 @@ export const useProjects = () => {
   const [displayError, setDisplayError] = useState<string>("");
 
   useEffect(() => {
+    const controller = new AbortController();
+
     const fetchItems = async () => {
       getProjects()
         .then((data) => {
@@ -23,6 +25,9 @@ export const useProjects = () => {
         });
     };
     fetchItems();
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   return { projects, loading, error, displayError };

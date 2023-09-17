@@ -11,6 +11,8 @@ export const useCertifications = () => {
   const [displayError, setDisplayError] = useState<string>("");
 
   useEffect(() => {
+    const controller = new AbortController();
+
     const fetchItems = async () => {
       await getCertifications()
         .then((data) => {
@@ -24,6 +26,9 @@ export const useCertifications = () => {
         });
     };
     fetchItems();
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   return { certifications, loading, error, displayError };
