@@ -1,2 +1,2 @@
 export { getAbout, getCertifications, getProjects } from "./api";
-export { useLoggerService } from "./logger";
+export { LoggerService } from "./logger";

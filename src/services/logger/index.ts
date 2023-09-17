@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-class LoggerService {
+export class LoggerService {
   logInfo(message: string) {
     console.log(`[INFO] ${message}`);
   }
@@ -16,9 +16,3 @@ class LoggerService {
     console.debug(`[DEBUG] ${message}`);
   }
 }
-
-export const useLoggerService = () => {
-  const logger = new LoggerService();
-
-  return logger;
-};

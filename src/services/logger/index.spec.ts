@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useLoggerService } from "./index";
+import { LoggerService } from "./index";
 
 global.console = {
   ...console,
@@ -13,7 +13,7 @@ describe("LoggerService", () => {
   let logger: any;
 
   beforeEach(() => {
-    logger = useLoggerService();
+    logger = new LoggerService();
     jest.spyOn(global.console, "log").mockImplementation(jest.fn());
     jest.spyOn(global.console, "debug").mockImplementation(jest.fn());
     jest.spyOn(global.console, "warn").mockImplementation(jest.fn());
